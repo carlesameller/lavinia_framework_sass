@@ -1,0 +1,94 @@
+@import "config";
+@import "mixins";
+/* QUERIES */
+
+@media (min-width: @sm_to) {
+  /* DISPLAYS */
+  .sm_show {display: none;}
+  .sm_none {display: block;}
+  .sm_none_inblock {display: inline-block;}
+  .xs_show {display: none;}
+  .xs_show_inblock {display: none;}
+  .xs_none {display: block;}
+  .xs_none_inblock {display: inline-block;}
+  .xs_sm_show{display: none !important;}
+  .xs_sm_none_inblock {display: inline-block !important;}
+  .xs_sm_show_inblock {display: none !important;}
+  .xs_sm_show_inline {display: none !important;}
+}
+
+@media (min-width: @xs_from) and (max-width: @sm_to) {
+  .xs_sm_none_inblock {display: none !important;}
+  .xs_sm_show_inblock {display: inline-block !important;}
+  .xs_sm_show_inline {display: inline !important;}
+}
+
+@media (min-width: @sm_from) and (max-width: @sm_to) {
+  /* DISPLAYS */
+  .sm_show {display: block;}
+  .sm_none {display: none;}
+  .sm_none_inblock {display: none;}
+  .xs_show {display: none;}
+  .xs_show_inblock {display: none;}
+  .xs_none {display: block;}
+  .xs_none_inblock {display: inline-block;}
+  .xs_sm_show{display: block !important;}
+
+  /* ALIGNMENT */
+  .sm_al_center {text-align: center;}
+  .sm_al_left {text-align: left;}
+  .sm_al_right{text-align: right;}
+
+  .sm_vtop{vertical-align: top !important;}
+  .sm_vmid{vertical-align: middle !important;}
+  .sm_vbot{vertical-align: bottom !important;}
+
+
+  /* ADJUSTS */
+  .sm_mgbot50 {margin-bottom: 50px;}
+  .sm_mgbot100 {margin-bottom: 100px;}
+  .sm_mgbot20 {margin-bottom: 20px;}
+  .sm_mgbot10 {margin-bottom: 10px;}
+
+  /* GUTTER */
+  .sm_gutter{
+    padding: 0 10px !important;
+  }
+  .sm_nogutter{
+    padding: 0 !important;
+  }
+}
+
+@media (min-width: @xs_from) and (max-width: @xs_to) {
+  /* DISPLAYS */
+  .sm_show {display: block;}
+  .sm_none {display: none;}
+  .sm_none_inblock {display: none;}
+  .xs_show {display: block;}
+  .xs_show_inblock {display: inline-block;}
+  .xs_show_inline {display: inline;}
+  .xs_none {display: none;}
+  .xs_none_inblock {display: none;}
+  .xs_sm_show{display: inline-block !important;}
+
+  /* ALIGNMENT */
+  .xs_al_center {text-align: center;}
+  .xs_al_left {text-align: left;}
+  .xs_al_right {text-align: right;}
+
+  /* ADJUSTS */
+  .xs_mgbot50 {margin-bottom: 50px;}
+  .xs_mgbot40 {margin-bottom: 40px;}
+  .xs_mgbot20 {margin-bottom: 20px;}
+  .xs_mgbot10 {margin-bottom: 10px;}
+  .xs_mgright5 {margin-bottom: 5px;}
+
+
+  /* GUTTER */
+  .xs_gutter{
+    padding: 0 10px !important;
+  }
+  .xs_nogutter{
+    padding: 0 !important;
+  }
+}

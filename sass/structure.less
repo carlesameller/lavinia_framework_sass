@@ -1,0 +1,59 @@
+@import "config";
+@import "utils";
+
+/*-- STRUCTURE --*/
+html, body {
+  padding: 0;
+  height: 100%;
+  color: @primary_color;
+  font-family: @primary_font_family;
+  font-weight: 400;
+  background-color: @body_bg;
+  p, h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: normal;
+    font-size: @standard-p;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+  }
+}
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 0;
+  /*position: relative;*/
+}
+
+header, main, footer {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.page_wrapper{
+  position: relative;
+  min-height: 100%;
+}
+
+main {
+  padding-bottom: @footer_height;
+}
+
+.main_footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: @footer_height;
+  background-color: @footer_bg;
+}
+
+.wrapper {
+  display: block;
+  width: 100%;
+  max-width: @wrapper-width;
+  margin: 0 auto;
+  .relative;
+}

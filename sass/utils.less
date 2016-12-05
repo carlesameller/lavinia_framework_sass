@@ -1,0 +1,168 @@
+@import "mixins";
+
+/*-- POSITIONS --*/
+.relative{position: relative;}
+.absolute{position: absolute;}
+.fixed{position: fixed;}
+
+/*-- DISPLAYS --*/
+.dblock {display: block;}
+.dinblock {display: inline-block;}
+.dnone, .hiddendiv{display: none;}
+.dtable{display: table;}
+.dtablecell{display: table-cell;}
+
+
+/*-- VERTICAL ALIGN --*/
+.vtop {vertical-align: top;}
+.vmid {vertical-align: middle;}
+.vbot {vertical-align: bottom;}
+
+/*-- TEXT ALIGN --*/
+.al_center{text-align: center;}
+.al_right{text-align: right;}
+.al_left{text-align: left;}
+
+/*-- FLOATS (not necessary) --*/
+.fleft {float: left;}
+.fright {float: right;}
+
+/*-- MOUSE CURSOR --*/
+.pointer{cursor: pointer;}
+.disabled{opacity: 0.5; cursor: not-allowed;}
+.hand {cursor: hand;}
+
+/*-- VARIOS --*/
+.unselectable{
+  .lh-user-select(none);
+}
+
+/*-- BASIC BORDER RADIUS --*/
+.rad_50{
+  .lh-border-radius(50%);
+}
+.rad_4{
+  .lh-border-radius(4px);
+}
+.rad_8{
+  .lh-border-radius(8px);
+}
+
+/*-- RESPONSIVE IMAGE --*/
+.resp_img {max-width: 100%; img{max-width: 100%;}}//can be applied to img or container
+
+/*-- OVERFLOW --*/
+.ov_hidden{overflow: hidden;}
+.ov_scroll{overflow: scroll;}
+.ov_xhidden{overflow-x: hidden;}
+.ov_yscroll{overflow-y: scroll;}
+
+/*-- BASIC TRANSITIONS --*/
+.transitioned{
+  .lh-transition(all 0.2s ease-in);
+}
+.mid_transitioned{
+  .lh-transition(all 1s ease-in);
+}
+.long_transitioned{
+  .lh-transition(all 2s ease-in);
+}
+
+/*-- SPECIFIC HEIGHTS & WIDTHS --*/
+.h100{height: 100%;}
+.w20{width: 20%;}
+.w25{width: 25%;}
+.w33{width: 33.333%;}
+.w50{width: 50%;}
+.w66{width: 66.666%;}
+.w75{width: 75%;}
+.w100{width: 100%;}
+
+/*-- RESP. IFRAME --*/
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16/9 ratio */
+  height: 0;
+  overflow: hidden;
+  iframe, object, embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/*-- POSITION ADJUST (HALL OF SHAME) --*/
+
+/*-- MARGIN --*/
+.mgbot5{margin-bottom: 5px;}
+.mgbot10{margin-bottom: 10px;}
+.mgbot15{margin-bottom: 15px;}
+.mgbot20{margin-bottom: 20px;}
+.mgbot30{margin-bottom: 30px;}
+.mgbot40{margin-bottom: 40px;}
+.mgbot50{margin-bottom: 50px;}
+
+.mgtop5{margin-top: 5px;}
+.mgtop10{margin-top: 10px;}
+.mgtop15{margin-top: 15px;}
+.mgtop20{margin-top: 20px;}
+.mgtop30{margin-top: 30px;}
+.mgtop40{margin-top: 40px;}
+.mgtop50{margin-top: 50px;}
+
+.mgleft5 {margin-left: 5px;}
+.mgleft10 {margin-left: 10px;}
+.mgleft15 {margin-left: 15px;}
+.mgleft20 {margin-left: 20px;}
+.mgleft30 {margin-left: 30px;}
+.mgleft40 {margin-left: 40px;}
+.mgleft50 {margin-left: 50px;}
+
+.mgright5 {margin-right: 5px;}
+.mgright10 {margin-right: 10px;}
+.mgright15 {margin-right: 15px;}
+.mgright20 {margin-right: 20px;}
+.mgright30 {margin-right: 30px;}
+.mgright40 {margin-right: 40px;}
+.mgright50 {margin-right: 50px;}
+
+/*-- PADDING --*/
+.pdbot5{padding-bottom: 5px;}
+.pdbot10{padding-bottom: 10px;}
+.pdbot15{padding-bottom: 15px;}
+.pdbot20{padding-bottom: 20px;}
+.pdbot30{padding-bottom: 30px;}
+.pdbot40{padding-bottom: 40px;}
+.pdbot50{padding-bottom: 50px;}
+
+.pdtop5{padding-top: 5px;}
+.pdtop10{padding-top: 10px;}
+.pdtop15{padding-top: 15px;}
+.pdtop20{padding-top: 20px;}
+.pdtop30{padding-top: 30px;}
+.pdtop40{padding-top: 40px;}
+.pdtop50{padding-top: 50px;}
+
+.pdleft5{padding-left: 5px;}
+.pdleft10{padding-left: 10px;}
+.pdleft15{padding-left: 15px;}
+.pdleft20{padding-left: 20px;}
+.pdleft30{padding-left: 30px;}
+.pdleft40{padding-left: 40px;}
+.pdleft50{padding-left: 50px;}
+
+.pdright5{padding-right: 5px;}
+.pdright10{padding-right: 10px;}
+.pdright15{padding-right: 15px;}
+.pdright20{padding-right: 20px;}
+.pdright30{padding-right: 30px;}
+.pdright40{padding-right: 40px;}
+.pdright50{padding-right: 50px;}
+
+.pd10 {padding: 10px;}
+.pd20 {padding: 20px;}
+.pd30 {padding: 30px;}
+.pd40 {padding: 40px;}
+.pd50 {padding: 50px;}
