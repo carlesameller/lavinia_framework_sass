@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*-- BASE --*/
 @import "config";
 @import "mixins";
@@ -26,7 +28,7 @@
 //@import "vendor/slider/slick";
 //@import "vendor/tooltips/tooltipster";
 /*MATERIAL DESIGN*/
-//.mtz{@import "vendor/material/materialize";}
+//.mtz{@import "vendor/materializecss/materialize";}
 
 /*-- CUSTOM PROJECT --*/
 @import "modules/header/main_header";
