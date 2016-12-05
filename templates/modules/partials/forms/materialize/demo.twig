@@ -1,0 +1,32 @@
+<form>
+	<div class="col_12 mgbot20">
+		{{ include('modules/partials/forms/materialize/input.twig', {type: 'email', id: 'id', label: 'label'}) }}
+	</div>
+	<div class="col_12 mgbot20">
+		{{ include('modules/partials/forms/materialize/textarea.twig', {id: 'id', label: 'label'}) }}
+	</div>
+	<div class="col_12 mgbot20">
+		{{ include('modules/partials/forms/materialize/select.twig', {id: 'id', label: 'label', placeholder: 'placeholder', options:[{value: 1, text: 'option01'}, {value: 2, text: 'option02'} ]}) }}
+	</div>
+	<div class="row mgbot20">
+		<div class="col_3">{{ include('modules/partials/forms/materialize/radio.twig', {id: 'radio01', label: 'radio01', name: 'group1'}) }}</div>
+		<div class="col_3">{{ include('modules/partials/forms/materialize/radio.twig', {id: 'radio02', label: 'radio02', name: 'group1'}) }}</div>
+		<div class="col_3">{{ include('modules/partials/forms/materialize/radio.twig', {id: 'radio03', label: 'radio03', name: 'group1'}) }}</div>
+		<div class="col_3">{{ include('modules/partials/forms/materialize/radio.twig', {id: 'radio04', label: 'radio04', name: 'group1'}) }}</div>
+	</div>
+	<div class="row mgbot20">
+		<div class="col_3">{{ include('modules/partials/forms/materialize/checkbox.twig', {id: 'check01', label: 'check01'}) }}</div>
+		<div class="col_3">{{ include('modules/partials/forms/materialize/checkbox.twig', {id: 'check02', label: 'check02'}) }}</div>
+		<div class="col_3">{{ include('modules/partials/forms/materialize/checkbox.twig', {id: 'check03', label: 'check03'}) }}</div>
+		<div class="col_3">{{ include('modules/partials/forms/materialize/checkbox.twig', {id: 'check04', label: 'check04'}) }}</div>
+	</div>
+	<div class="col_12 mgbot20">
+		{{ include('modules/partials/forms/materialize/switch.twig', {off_label: 'OFF', on_label: 'ON'}) }}
+	</div>
+	<div class="col_12 mgbot20">
+		{{ include('modules/partials/forms/materialize/file.twig', {multiple: true, placeholder: 'placeholder', btn_text: 'BTN TEXT'}) }}
+	</div>
+	<div class="col_12 mgbot20">
+		{{ include('modules/partials/forms/materialize/datepicker.twig', {id: 'id'}) }}
+	</div>
+</form>
