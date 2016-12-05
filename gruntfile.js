@@ -30,7 +30,8 @@ module.exports = function(grunt) {
         sass: {                              // Task
             dist: {                            // Target
                 options: {                       // Target options
-                    style: 'compressed'
+                    style: 'compressed',
+                    noCache: true
                 },
                 files: {                         // Dictionary of files
                     'css/cam.css': 'sass/cam.scss'       // 'destination': 'source'
