@@ -33,19 +33,7 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {                         // Dictionary of files
-                    'less/vendor/material/materialize.less': 'vendor/materialize/sass/materialize.scss'       // 'destination': 'source'
-                }
-            }
-        },
-        less: {
-            development: {
-                options: {
-                    paths: ["less/**/*"],
-                    yuicompress: true,
-                    compress: true
-                },
-                files: {
-                    "css/cam.css": "less/cam.less"
+                    'css/cam.css': 'sass/cam.scss'       // 'destination': 'source'
                 }
             }
         },
@@ -76,15 +64,13 @@ module.exports = function(grunt) {
         watch: {
             files: [
                 'js/vendor/**/*.js',
-                "vendor/materialize/sass/**/*",
-                "less/**/*",
+                "sass/**/*",
                 "img/src/**/*",
                 "gruntfile.js"
             ],
             tasks: [
                 "uglify",
                 "sass",
-                "less",
                 "cssnano",
                 ['newer:imagemin']
             ]
@@ -94,7 +80,6 @@ module.exports = function(grunt) {
     // Loads
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-cssnano');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-newer');

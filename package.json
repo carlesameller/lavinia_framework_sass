@@ -15,7 +15,6 @@
     "Placeholders.js": "jamesallardice/Placeholders.js",
     "Respond.js": "scottjehl/Respond",
     "grunt-contrib-imagemin": "^1.0.1",
-    "grunt-contrib-less": "^1.3.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
