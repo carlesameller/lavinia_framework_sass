@@ -14,12 +14,14 @@
   "devDependencies": {
     "Placeholders.js": "jamesallardice/Placeholders.js",
     "Respond.js": "scottjehl/Respond",
+    "autoprefixer": "^6.5.3",
+    "cssnano": "^3.8.1",
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-cssnano": "^2.1.0",
     "grunt-newer": "^1.2.0",
+    "grunt-postcss": "^0.8.0",
     "html5shiv": "afarkas/html5shiv",
     "jquery": "^3.1.1"
   },

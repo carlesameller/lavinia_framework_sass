@@ -38,14 +38,16 @@ module.exports = function(grunt) {
                 }
             }
         },
-        cssnano: {
+        postcss: {
             options: {
-                sourcemap: false
+                map: false, // inline sourcemaps
+                processors: [
+                    require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+                    require('cssnano')() // minify the result
+                ]
             },
             dist: {
-                files: {
-                    'css/cam.css': 'css/cam.css'
-                }
+                src: 'css/*.css'
             }
         },
         imagemin: {                          // Task
@@ -72,7 +74,7 @@ module.exports = function(grunt) {
             tasks: [
                 "uglify",
                 "sass",
-                "cssnano",
+                "postcss",
                 ['newer:imagemin']
             ]
         }
@@ -81,7 +83,7 @@ module.exports = function(grunt) {
     // Loads
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-cssnano');
+    grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-newer');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -89,3 +91,4 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ['watch']);
 };
+
