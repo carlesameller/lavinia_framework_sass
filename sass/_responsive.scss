@@ -1,8 +1,8 @@
 @import "config";
-@import "mixins";
+@import "bourbon/bourbon";
 /* QUERIES */
 
-@media (min-width: @sm_to) {
+@media (min-width: $sm_to) {
   /* DISPLAYS */
   .sm_show {display: none;}
   .sm_none {display: block;}
@@ -17,13 +17,13 @@
   .xs_sm_show_inline {display: none !important;}
 }
 
-@media (min-width: @xs_from) and (max-width: @sm_to) {
+@media (min-width: $xs_from) and (max-width: $sm_to) {
   .xs_sm_none_inblock {display: none !important;}
   .xs_sm_show_inblock {display: inline-block !important;}
   .xs_sm_show_inline {display: inline !important;}
 }
 
-@media (min-width: @sm_from) and (max-width: @sm_to) {
+@media (min-width: $sm_from) and (max-width: $sm_to) {
   /* DISPLAYS */
   .sm_show {display: block;}
   .sm_none {display: none;}
@@ -59,7 +59,7 @@
   }
 }
 
-@media (min-width: @xs_from) and (max-width: @xs_to) {
+@media (min-width: $xs_from) and (max-width: $xs_to) {
   /* DISPLAYS */
   .sm_show {display: block;}
   .sm_none {display: none;}

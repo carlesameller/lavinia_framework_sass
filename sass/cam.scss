@@ -1,15 +1,18 @@
 @charset "UTF-8";
 
+
+/*-- BOURBON --*/
+@import "bourbon/bourbon";
+
 /*-- BASE --*/
 @import "config";
-@import "mixins";
 @import "colorset";
 @import "reset";
 @import "utils";
-@import "grid";
+@import "grid";//PENDING LOOPS
 @import "responsive";
 @import "structure";
-@import "typo";
+@import "typo";//PENDING LOOPS
 @import "forms";
 @import "buttons";
 
@@ -31,6 +34,6 @@
 //.mtz{@import "vendor/materializecss/materialize";}
 
 /*-- CUSTOM PROJECT --*/
-@import "modules/header/main_header";
-@import "modules/footer/main_footer";
-@import "modules/main";
+//@import "modules/header/main_header";
+//@import "modules/footer/main_footer";
+//@import "modules/main";

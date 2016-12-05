@@ -2,15 +2,13 @@
 
 /*-- FORM ITEMS --*/
 select, input[type=text], input[type=password],input[type=url],input[type=tel],input[type=number],input[type=color],input[type=email] {//NOT input alone --> to avoid checkbox & radio
-  height: @form_items_input_height;
+  height: $form_items_input_height;
   width: 100%;
-  border: @form_items_border;
-  padding: @form_items_input_padding;
-  background-color: @form_items_bg;
-  border-radius: @form_items_radius;
-  -moz-border-radius: @form_items_radius;
-  -webkit-border-radius: @form_items_radius;
-  font-size: @standard-p;
+  border: $form_items_border;
+  padding: $form_items_input_padding;
+  background-color: $form_items_bg;
+  border-radius: $form_items_radius;
+  font-size: $standard-p;
   &:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px white inset;
   }
@@ -18,14 +16,12 @@ select, input[type=text], input[type=password],input[type=url],input[type=tel],i
 
 
 textarea {
-  height: @form_items_txtarea_height;
+  height: $form_items_txtarea_height;
   width: 100%;
-  border: @form_items_border;
-  padding: @form_items_txtarea_padding;
+  border: $form_items_border;
+  padding: $form_items_txtarea_padding;
   resize: none;
-  border-radius: @form_items_radius;
-  -moz-border-radius: @form_items_radius;
-  -webkit-border-radius: @form_items_radius;
-  font-size: @standard-p;
+  border-radius: $form_items_radius;
+  font-size: $standard-p;
 }
 

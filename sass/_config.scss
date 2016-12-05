@@ -1,74 +1,74 @@
 /*-- ENABLES --*/
-@enable_flexbox: false;
-@enable_line_height: false;
+$enable_flexbox: true;
+$enable_line_height: false;
 
 /*-- STRUCTURE --*/
-@body_bg: #f9f9f9;
-@wrapper-width: 960px;
+$body_bg: #f9f9f9;
+$wrapper-width: 960px;
 
 //USED TO PUSH FOOTER ALWAYS BOTTOM
-@footer_height: 100px;
-@footer_bg: #333;
+$footer_height: 100px;
+$footer_bg: #333;
 
 /*-- GRID SYSTEM --*/
-@col-number: 12;
-@gutter: 10px;
+$col-number: 12;
+$gutter: 10px;
 
 /*-- BREAKPOINTS --*/
 
 //MEDIUM
-@md_from: 981px;
-@md_to: 1280px;
+$md_from: 981px;
+$md_to: 1280px;
 
 //TABLET PORTRAIT
-@sm_from: 768px;
-@sm_to: 980px;
+$sm_from: 768px;
+$sm_to: 980px;
 
 //MOBILE
-@xs_from: 0px;
-@xs_to: 767px;
+$xs_from: 0px;
+$xs_to: 767px;
 
 /*-- TYPOGRAPHY --*/
-@primary_font_family: Arial, Helvetica, sans-serif;
-@secondary_font_family: Helvetica, Arial, sans-serif;
-@max_font_size: 50;
-@max_line_height: @max_font_size + 30;
-@standard-p: 13px;
+$primary_font_family: Arial, Helvetica, sans-serif;
+$secondary_font_family: Helvetica, Arial, sans-serif;
+$max_font_size: 50;
+$max_line_height: $max_font_size + 30;
+$standard-p: 13px;
 
 /*-- COLORSET --*/
-@primary_color: #333;
-@secondary_color: #666;
+$primary_color: #333;
+$secondary_color: #666;
 //go colorset.less for more
 
 /*-- FORM ITEMS --*/
-@form_items_radius: 4px;
-@form_items_input_height: 32px;
-@form_items_input_padding: 0 10px;
-@form_items_border: 1px solid #ddd;
-@form_items_bg: #FFF;
+$form_items_radius: 4px;
+$form_items_input_height: 32px;
+$form_items_input_padding: 0 10px;
+$form_items_border: 1px solid #ddd;
+$form_items_bg: #FFF;
 
 //TEXTAREA
-@form_items_txtarea_height: 160px;
-@form_items_txtarea_padding: 10px;
+$form_items_txtarea_height: 160px;
+$form_items_txtarea_padding: 10px;
 
 /*-- BUTTONS --*/
-@btn-lateral-pad: 10px; //both sides
-@std-radius: 4px;
+$btn-lateral-pad: 10px; //both sides
+$std-radius: 4px;
 
 // HOVER
-@std-hover-color: #ccc;
+$std-hover-color: #ccc;
 
 // BIG SIZE BUTTON
-@big-minwidth: 200px;
-@big-height: 30px;
-@big-txt-align: center;
+$big-minwidth: 200px;
+$big-height: 30px;
+$big-txt-align: center;
 
 // MEDIUM SIZE BUTTON
-@medium-minwidth: 150px;
-@medium-height: 25px;
-@medium-txt-align: center;
+$medium-minwidth: 150px;
+$medium-height: 25px;
+$medium-txt-align: center;
 
 // SMALL SIZE BUTTON
-@small-minwidth: 75px;
-@small-height: 20px;
-@small-txt-align: center;
+$small-minwidth: 75px;
+$small-height: 20px;
+$small-txt-align: center;

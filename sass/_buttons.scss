@@ -7,42 +7,42 @@
 .btn {
   border: 0;
   padding: 0;
-  .transitioned;
-  .relative;
+  @extend .transitioned;
+  @extend .relative;
   &.big {
-    text-align: @big-txt-align;
-    min-width: @big-minwidth;
-    height: @big-height;
-    padding: 0 @btn-lateral-pad;
-    border-radius: @std-radius;
-    -moz-border-radius: @std-radius;
-    -webkit-border-radius: @std-radius;
+    text-align: $big-txt-align;
+    min-width: $big-minwidth;
+    height: $big-height;
+    padding: 0 $btn-lateral-pad;
+    border-radius: $std-radius;
+    -moz-border-radius: $std-radius;
+    -webkit-border-radius: $std-radius;
     &:hover{
-      background-color: @std-hover-color;
+      background-color: $std-hover-color;
     }
   }
   &.medium {
-    text-align: @medium-txt-align;
-    min-width: @medium-minwidth;
-    height: @medium-height;
-    padding: 0 @btn-lateral-pad;
-    border-radius: @std-radius;
-    -moz-border-radius: @std-radius;
-    -webkit-border-radius: @std-radius;
+    text-align: $medium-txt-align;
+    min-width: $medium-minwidth;
+    height: $medium-height;
+    padding: 0 $btn-lateral-pad;
+    border-radius: $std-radius;
+    -moz-border-radius: $std-radius;
+    -webkit-border-radius: $std-radius;
     &:hover{
-      background-color: @std-hover-color;
+      background-color: $std-hover-color;
     }
   }
   &.small {
-    text-align: @small-txt-align;
-    min-width: @small-minwidth;
-    height: @small-height;
-    padding: 0 @btn-lateral-pad;
-    border-radius: @std-radius;
-    -moz-border-radius: @std-radius;
-    -webkit-border-radius: @std-radius;
+    text-align: $small-txt-align;
+    min-width: $small-minwidth;
+    height: $small-height;
+    padding: 0 $btn-lateral-pad;
+    border-radius: $std-radius;
+    -moz-border-radius: $std-radius;
+    -webkit-border-radius: $std-radius;
     &:hover{
-      background-color: @std-hover-color;
+      background-color: $std-hover-color;
     }
   }
 }
@@ -50,7 +50,7 @@
 /*-- ADJUST TO APPLY TO <a> --*/
 a.btn{
   display: inline-block;
-  &.big {line-height: @big-height;}
-  &.medium {line-height: @medium-height;}
-  &.small {line-height: @small-height;}
+  &.big {line-height: $big-height;}
+  &.medium {line-height: $medium-height;}
+  &.small {line-height: $small-height;}
 }

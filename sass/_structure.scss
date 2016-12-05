@@ -5,16 +5,16 @@
 html, body {
   padding: 0;
   height: 100%;
-  color: @primary_color;
-  font-family: @primary_font_family;
+  color: $primary_color;
+  font-family: $primary_font_family;
   font-weight: 400;
-  background-color: @body_bg;
+  background-color: $body_bg;
   p, h1, h2, h3, h4, h5, h6 {
     margin: 0 0 0 0;
     text-overflow: ellipsis;
     overflow: hidden;
     font-weight: normal;
-    font-size: @standard-p;
+    font-size: $standard-p;
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
   }
@@ -38,7 +38,7 @@ header, main, footer {
 }
 
 main {
-  padding-bottom: @footer_height;
+  padding-bottom: $footer_height;
 }
 
 .main_footer{
@@ -46,14 +46,14 @@ main {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: @footer_height;
-  background-color: @footer_bg;
+  height: $footer_height;
+  background-color: $footer_bg;
 }
 
 .wrapper {
   display: block;
   width: 100%;
-  max-width: @wrapper-width;
+  max-width: $wrapper-width;
   margin: 0 auto;
-  .relative;
+  position: relative;
 }

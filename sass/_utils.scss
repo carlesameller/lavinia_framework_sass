@@ -1,4 +1,4 @@
-@import "mixins";
+@import "bourbon/bourbon";
 
 /*-- POSITIONS --*/
 .relative{position: relative;}
@@ -34,18 +34,21 @@
 
 /*-- VARIOS --*/
 .unselectable{
-  .lh-user-select(none);
+  @include user-select(none);
 }
 
 /*-- BASIC BORDER RADIUS --*/
 .rad_50{
-  .lh-border-radius(50%);
+  @include border-top-radius(50%);
+  @include border-bottom-radius(50%);
+  @include border-left-radius(50%);
+  @include border-right-radius(50%);
 }
 .rad_4{
-  .lh-border-radius(4px);
-}
-.rad_8{
-  .lh-border-radius(8px);
+  @include border-top-radius(4px);
+  @include border-bottom-radius(4px);
+  @include border-left-radius(4px);
+  @include border-right-radius(4px);
 }
 
 /*-- RESPONSIVE IMAGE --*/
@@ -59,13 +62,13 @@
 
 /*-- BASIC TRANSITIONS --*/
 .transitioned{
-  .lh-transition(all 0.2s ease-in);
+  @include transition(all 0.2s ease-in);
 }
 .mid_transitioned{
-  .lh-transition(all 1s ease-in);
+  @include transition(all 1s ease-in);
 }
 .long_transitioned{
-  .lh-transition(all 2s ease-in);
+  @include transition(all 2s ease-in);
 }
 
 /*-- SPECIFIC HEIGHTS & WIDTHS --*/

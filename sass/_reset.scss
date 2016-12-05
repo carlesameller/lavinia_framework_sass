@@ -1,7 +1,7 @@
 @import "config";
 
 /*-- RESET --*/
-* ,&:after ,&:before {
+* , :after , :before {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   background-repeat: no-repeat;
@@ -10,7 +10,7 @@
 }
 
 p {
-  font-size: @standard-p;
+  font-size: $standard-p;
 }
 
 a {
@@ -58,5 +58,5 @@ button, a {
   margin: 0;
   background: transparent;
   cursor: pointer;
-  .xfont1;
+  @extend .xfont1;
 }
