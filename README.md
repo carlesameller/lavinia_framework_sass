@@ -42,4 +42,4 @@ Materializecss "optional for forms" (http://materializecss.com/)
 * [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
 * [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin)
 * [grunt-newer](https://github.com/tschaub/grunt-newer)
-* [grunt-postcss](https://github.com/nDmitry/grunt-postcss) autoprefixer & cssnano
+* [grunt-postcss](https://github.com/nDmitry/grunt-postcss) (autoprefixer & cssnano)
