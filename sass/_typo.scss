@@ -26,169 +26,96 @@ strong, b{font-weight: 700;}
 .nodeco{text-decoration: none;}
 
 
-/*-- FONT SIZING --*/
 
-//.generate_fontSize() {
-//  .x(@index) {
-//    @item: ~".x_@{index}, .md_x@{index}, .sm_x@{index}, .xs_x@{index}";
-//    .x((@index + 1), @item);
-//  }
-//  .x(@index, @list) when (@index =< @max_font_size) {
-//    @item: ~".x_@{index}, .md_x@{index}, .sm_x@{index}, .xs_x@{index}";
-//    .x((@index + 1), ~"@{list}, @{item}");
-//  }
-//  .x(@index, @list) when (@index > @max_font_size) {
-//    @{list} {}
-//  }
-//  .x(1); // kickstart it
-//}
-//
-//.generate_fontSizeClass(@class) {
-//  .x(@index) {
-//    @item: ~".x@{index}";
-//    .x((@index + 1), @item);
-//  }
-//  .x(@index, @list) when (@index =< @max_font_size) {
-//    @item: ~".x@{index}";
-//    .x((@index + 1), ~"@{list}, @{item}");
-//  }
-//  .x(@index, @list) when (@index > @max_font_size) {
-//    @{list} {}
-//  }
-//  .x(1); // kickstart it
-//}
-//
-///*-- CALCULATE --*/
-//.calc-fontSize(@index, @class, @type) when (@type = size) and (@index > 8) and (@index < 21) {
-//  .@{class}@{index} {
-//    font-size: ((@index + 0px));
-//  }
-//}
-//
-///*-- CALCULATE 20 and UP --*/
-//.calc-fontSize2(@index, @class, @type) when (@type = size) and (@index > 20) {
-//  .@{class}@{index} {
-//    font-size: ((@index + 0px));
-//  }
-//}
-//
-//
-///*-- LOOP --*/
-//.loop-fontSize(@index, @class, @type) when (@index >= 0) {
-//  .calc-fontSize(@index, @class, @type);
-//  .loop-fontSize((@index - 1), @class, @type);
-//}
-//
-//.make-fontSize(@class) {
-//  .generate_fontSizeClass(@class);
-//  .loop-fontSize(@max_font_size, @class, size);
-//}
-//
-///*-- LOOP 20 and UP --*/
-//.loop-fontSize2(@index, @class, @type) when (@index >= 0) {
-//  .calc-fontSize2(@index, @class, @type);
-//  .loop-fontSize2((@index - 2), @class, @type);
-//}
-//
-//.make-fontSize2(@class) {
-//  .generate_fontSizeClass(@class);
-//  .loop-fontSize2(@max_font_size, @class, size);
-//}
-//
-///*-- GENERATE FONTSIZE CALL --*/
-//.generate_fontSize();
-//
-///*-- GENERIC FONTSIZE --*/
-//.make-fontSize2(x);
-//.make-fontSize(x);
-//
-//
-///*-- MD FONTSIZE --*/
-//@media (min-width: @md_from) and (max-width: @md_to) {
-//  .make-fontSize2(md_x);
-//  .make-fontSize(md_x);
-//}
-//
-///*-- SM FONTSIZE --*/
-//@media (min-width: @sm_from) and (max-width: @sm_to) {
-//  .make-fontSize2(sm_x);
-//  .make-fontSize(sm_x);
-//}
-//
-///*-- XS FONTSIZE --*/
-//@media (min-width: @xs_from) and (max-width: @xs_to) {
-//  .make-fontSize2(xs_x);
-//  .make-fontSize(xs_x);
-//}
-//
-//
-///*-- LINE HEIGHT --*/
-//.generate_lineHeight() {
-//  .lh(@index) {
-//    @item: ~".lh@{index}, .sm_lh@{index}, .xs_lh@{index}";
-//    .lh((@index + 1), @item);
-//  }
-//  .lh(@index, @list) when (@index =< @max_line_height) {
-//    @item: ~".lh@{index}, .sm_lh@{index}, .xs_lh@{index}";
-//    .lh((@index + 1), ~"@{list}, @{item}");
-//  }
-//  .lh(@index, @list) when (@index > @max_line_height) {
-//    @{list} {
-//    }
-//  }
-//  .lh(1); // kickstart it
-//}
-//
-//.generate_lineHeightClass(@class) {
-//  .lh(@index) {
-//    @item: ~".lh@{index}";
-//    .lh((@index + 1), @item);
-//  }
-//  .lh(@index, @list) when (@index =< @max_line_height) {
-//    @item: ~".lh@{index}";
-//    .lh((@index + 1), ~"@{list}, @{item}");
-//  }
-//  .lh(@index, @list) when (@index > @max_line_height) {
-//    @{list} {
-//    }
-//  }
-//  .lh(1); // kickstart it
-//}
-//
-///*-- CALCULATE --*/
-//.calc-lineHeight(@index, @class, @type) when (@type = size) and (@index > 8) {
-//  .@{class}@{index} {
-//    line-height: ((@index + 0px));
-//  }
-//}
-//
-///*-- LOOP --*/
-//.loop-lineHeight(@index, @class, @type) when (@index >= 0) {
-//  .calc-lineHeight(@index, @class, @type);
-//  .loop-lineHeight((@index - 2), @class, @type);
-//}
-//
-//.make-lineHeight(@class) {
-//  .generate_lineHeightClass(@class);
-//  .loop-lineHeight(@max_line_height, @class, size);
-//}
-//
-///*-- GENERATE FONTSIZE CALL --*/
-//.generate_lineHeight();
-//
-//.line_height_enabled(@line_height_enabled) when (@line_height_enabled = true) {
-//  /*-- GENERIC FONTSIZE --*/
-//  .make-lineHeight(lh);
-//
-//  /*-- SM FONTSIZE --*/
-//  @media (min-width: @sm_from) and (max-width: @sm_to) {
-//    .make-lineHeight(sm_lh);
-//  }
-//
-//  /*-- XS FONTSIZE --*/
-//  @media (min-width: @xs_from) and (max-width: @xs_to) {
-//    .make-lineHeight(xs_lh);
-//  }
-//}
-//
-//.line_height_enabled(@enable_line_height);
+
+/*-- FONT SIZE GENERATOR --*/
+$a: 1; // == i++
+
+@for $i from 9 through 24 {.x#{$i} {font-size: $i + px;}}
+@for $i from 24 through $max_font_size {
+  $a : $a + 1;
+  @if ($i + $a <= $max_font_size){
+    .x#{$i + $a} {font-size: $i + $a + px;}
+  }
+}
+
+$a: 1; // == i++
+/*-- MD FONT-SIZE --*/
+@media (min-width: $md_from) and (max-width: $md_to) {
+  @for $i from 9 through 24 {.md_x#{$i} {font-size: $i + px;}}
+  @for $i from 24 through $max_font_size {
+    $a : $a + 1;
+    @if ($i + $a <= $max_font_size){
+      .md_x#{$i + $a} {font-size: $i + $a + px;}
+    }
+  }
+}
+$a: 1; // == i++
+/*-- SM FONT-SIZE --*/
+@media (min-width: $sm_from) and (max-width: $sm_to) {
+  @for $i from 9 through 24 {.sm_x#{$i} {font-size: $i + px;}}
+  @for $i from 24 through $max_font_size {
+    $a : $a + 1;
+    @if ($i + $a <= $max_font_size){
+      .sm_x#{$i + $a} {font-size: $i + $a + px;}
+    }
+  }
+}
+$a: 1; // == i++
+/*-- XS FONT-SIZE --*/
+@media (min-width: $xs_from) and (max-width: $xs_to) {
+  @for $i from 9 through 24 {.xs_x#{$i} {font-size: $i + px;}}
+  @for $i from 24 through $max_font_size {
+    $a : $a + 1;
+    @if ($i + $a <= $max_font_size){
+      .xs_x#{$i + $a} {font-size: $i + $a + px;}
+    }
+  }
+}
+
+
+/*-- LINE HEIGHT GENERATOR --*/
+@if $enable_line_height {
+  $a: 1; // == i++
+  @for $i from 9 through 24 {.lh#{$i} {line-height: $i + px;}}
+  @for $i from 24 through $max_line_height {
+    $a : $a + 1;
+    @if ($i + $a <= $max_line_height){
+      .lh#{$i + $a} {line-height: $i + $a + px;}
+    }
+  }
+
+  /*-- MD line-height --*/
+  $a: 1; // == i++
+  @media (min-width: $md_from) and (max-width: $md_to) {
+    @for $i from 9 through 24 {.md_lh#{$i} {line-height: $i + px;}}
+    @for $i from 24 through $max_line_height {
+      $a : $a + 1;
+      @if ($i + $a <= $max_line_height){
+        .md_lh#{$i + $a} {line-height: $i + $a + px;}
+      }
+    }
+  }
+  /*-- SM line-height --*/
+  $a: 1; // == i++
+  @media (min-width: $sm_from) and (max-width: $sm_to) {
+    @for $i from 9 through 24 {.sm_lh#{$i} {line-height: $i + px;}}
+    @for $i from 24 through $max_line_height {
+      $a : $a + 1;
+      @if ($i + $a <= $max_line_height){
+        .sm_lh#{$i + $a} {line-height: $i + $a + px;}
+      }
+    }
+  }
+  /*-- XS line-height --*/
+  $a: 1; // == i++
+  @media (min-width: $xs_from) and (max-width: $xs_to) {
+    @for $i from 9 through 24 {.xs_lh#{$i} {line-height: $i + px;}}
+    @for $i from 24 through $max_line_height {
+      $a : $a + 1;
+      @if ($i + $a <= $max_line_height){
+        .xs_lh#{$i + $a} {line-height: $i + $a + px;}
+      }
+    }
+  }
+}

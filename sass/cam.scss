@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
-
-/*-- BOURBON --*/
+/*-- BOURBON(mixins & functions) --*/
 @import "bourbon/bourbon";
 
 /*-- BASE --*/
@@ -9,10 +8,10 @@
 @import "colorset";
 @import "reset";
 @import "utils";
-@import "grid";//PENDING LOOPS
+@import "grid";
 @import "responsive";
 @import "structure";
-@import "typo";//PENDING LOOPS
+@import "typo";
 @import "forms";
 @import "buttons";
 
@@ -29,11 +28,13 @@
 //@import "vendor/scrollbars/customScrollbar";
 //@import "vendor/select2/select2";
 //@import "vendor/slider/slick";
+//@import "vendor/slider/slick_theme";
 //@import "vendor/tooltips/tooltipster";
+
 /*MATERIAL DESIGN*/
 //.mtz{@import "vendor/materializecss/materialize";}
 
 /*-- CUSTOM PROJECT --*/
-//@import "modules/header/main_header";
-//@import "modules/footer/main_footer";
-//@import "modules/main";
+@import "modules/header/main_header";
+@import "modules/footer/main_footer";
+@import "modules/main";

@@ -1,6 +1,10 @@
 /*-- ENABLES --*/
-$enable_flexbox: true;
+//FRAMEWORK
+$enable_flexbox: false;
 $enable_line_height: false;
+
+//VENDORS
+$enable_animations: false;
 
 /*-- STRUCTURE --*/
 $body_bg: #f9f9f9;
@@ -34,11 +38,7 @@ $secondary_font_family: Helvetica, Arial, sans-serif;
 $max_font_size: 50;
 $max_line_height: $max_font_size + 30;
 $standard-p: 13px;
-
-/*-- COLORSET --*/
 $primary_color: #333;
-$secondary_color: #666;
-//go colorset.less for more
 
 /*-- FORM ITEMS --*/
 $form_items_radius: 4px;

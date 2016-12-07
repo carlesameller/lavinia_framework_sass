@@ -9,6 +9,11 @@
   &.nogutter  {padding: 0; min-height: 1px;}
   &.vmid {vertical-align: middle;}
   &.vbot {vertical-align: bottom;}
+  min-height: 1px;
+  padding-left:  $gutter;
+  padding-right: $gutter;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .row{
@@ -38,12 +43,9 @@
       &.flex_align_baseline{@include align-items(baseline);}
       &.flex_align_stretch{@include align-items(stretch);}
       [class^="col_"], [class*=" col_"]{
-        &.flex_order1{@include order(1);}
-        &.flex_order2{@include order(2);}
-        &.flex_order3{@include order(3);}
-        &.flex_order4{@include order(4);}
-        &.flex_order5{@include order(5);}
-        &.flex_order6{@include order(6);}
+        @for $i from 1 through $col-number / 2 {
+          &.flex_order#{$i}{@include order($i);}
+        }
         display: inherit;
         > div{
           width: 100%;
@@ -81,12 +83,9 @@
         &.sm_flex_align_baseline{@include align-items(baseline);}
         &.sm_flex_align_stretch{@include align-items(stretch);}
         [class^="col_"], [class*=" col_"]{
-          &.sm_flex_order1{@include order(1);}
-          &.sm_flex_order2{@include order(2);}
-          &.sm_flex_order3{@include order(3);}
-          &.sm_flex_order4{@include order(4);}
-          &.sm_flex_order5{@include order(5);}
-          &.sm_flex_order6{@include order(6);}
+          @for $i from 1 through $col-number / 2 {
+            &.sm_flex_order#{$i}{@include order($i);}
+          }
           display: inherit;
           > div{
             width: 100%;
@@ -120,12 +119,9 @@
         &.xs_flex_align_baseline{@include align-items(baseline);}
         &.xs_flex_align_stretch{@include align-items(stretch);}
         [class^="col_"], [class*=" col_"]{
-          &.xs_flex_order1{@include order(1);}
-          &.xs_flex_order2{@include order(2);}
-          &.xs_flex_order3{@include order(3);}
-          &.xs_flex_order4{@include order(4);}
-          &.xs_flex_order5{@include order(5);}
-          &.xs_flex_order6{@include order(6);}
+          @for $i from 1 through $col-number / 2 {
+            &.xs_flex_order#{$i}{@include order($i);}
+          }
           display: inherit;
           > div{
             width: 100%;
@@ -136,94 +132,33 @@
   }
 }
 
+
 /*-- GRID MAKER --*/
 
-//.make-grid-columns() {
-//  .col(@index) {
-//    @item: ~".col_@{index}, .md_@{index}, .sm_@{index}, .xs_@{index}";
-//    .col((@index + 1), @item);
-//  }
-//  .col(@index, @list) when (@index =< @col-number) {
-//    @item: ~".col_@{index}, .md_@{index}, .sm_@{index}, .xs_@{index}";
-//    .col((@index + 1), ~"@{list}, @{item}");
-//  }
-//  .col(@index, @list) when (@index > @col-number) {
-//    @{list} {
-//      min-height: 1px;
-//      padding-left:  @gutter;
-//      padding-right: @gutter;
-//      display: inline-block;
-//      vertical-align: top;
-//    }
-//  }
-//  .col(1); // kickstart it
-//}
-//
-//.dinblock-grid-columns(@class) {
-//  .col(@index) {
-//    @item: ~".col@{index}";
-//    .col((@index + 1), @item);
-//  }
-//  .col(@index, @list) when (@index =< @col-number) {
-//    @item: ~".col@{index}";
-//    .col((@index + 1), ~"@{list}, @{item}");
-//  }
-//  .col(@index, @list) when (@index > @col-number) {
-//    @{list} {
-//
-//    }
-//  }
-//  .col(1); // kickstart it
-//}
-//
-//.calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
-//  .@{class}@{index} {
-//    width: percentage((@index / @col-number));
-//  }
-//}
-//
-//.calc-grid-column(@index, @class, @type) when (@type = offset) {
-//  .@{class}off@{index} {
-//    margin-left: percentage((@index / @col-number));
-//  }
-//}
-//
-//
-//// Basic looping in LESS
-//.loop-grid-columns(@index, @class, @type) when (@index >= 0) {
-//  .calc-grid-column(@index, @class, @type);
-//  // next iteration
-//  .loop-grid-columns((@index - 1), @class, @type);
-//}
-//
-//// Create grid for specific class
-//.make-grid(@class) {
-//  .dinblock-grid-columns(@class);
-//  .loop-grid-columns(@col-number, @class, width);
-//  .loop-grid-columns(@col-number, @class, offset);
-//}
-//
-//
-//
-//
-///*-- COMMON STYLES --*/
-//.make-grid-columns();
-//
-///*-- GENERIC COLUMN --*/
-//.make-grid(col_);
-//
-///*-- MD COLUMN --*/
-//@media (min-width: @md_from) and (max-width: @md_to) {
-//  .make-grid(md_);
-//}
-//
-///*-- SM COLUMN --*/
-//@media (min-width: @sm_from) and (max-width: @sm_to) {
-//  .make-grid(sm_);
-//}
-//
-///*-- XS COLUMN --*/
-//@media (min-width: @xs_from) and (max-width: @xs_to) {
-//  .make-grid(xs_);
-//}
+@for $i from 1 through $col-number {
+  /*-- GENERIC COLUMN --*/
+  .col_#{$i} {width: 100% / $col-number * $i;}
+  .col_off#{$i} {margin-left: 100% / $col-number * $i;}
+}
 
+/*-- MD COLUMN --*/
+@media (min-width: $md_from) and (max-width: $md_to) {
+  @for $i from 1 through $col-number {
+    .md_#{$i} {width: 100% / $col-number * $i;}
+    .md_off#{$i} {margin-left: 100% / $col-number * $i;}
+  }
+}
+/*-- SM COLUMN --*/
+@media (min-width: $sm_from) and (max-width: $sm_to) {
+  @for $i from 1 through $col-number {
+    .sm_#{$i} {width: 100% / $col-number * $i;}
+    .sm_off#{$i} {margin-left: 100% / $col-number * $i;}
+  }
+}
+/*-- XS COLUMN --*/
+@media (min-width: $xs_from) and (max-width: $xs_to) {
+  @for $i from 1 through $col-number {
+    .xs_#{$i} {width: 100% / $col-number * $i;}
+    .xs_off#{$i} {margin-left: 100% / $col-number * $i;}
+  }
+}
