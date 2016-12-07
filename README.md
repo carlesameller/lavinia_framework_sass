@@ -6,8 +6,7 @@ Twig (http://twig.sensiolabs.org/)
 
 ## Pre-Processor
 
-Less (http://lesscss.org/)
-Sass (just for materializecss) 
+Scss (http://sass-lang.com/) 
 
 ## Vendor
 
@@ -29,9 +28,9 @@ Materializecss "optional for forms" (http://materializecss.com/)
 ## Dependencies
 grunt
 
-ruby (if materializecss enabled)
+ruby
 
-sass (if materializecss enabled)
+sass
 
 ##### IE
 * HTML5SHIV [https://github.com/aFarkas/html5shiv](https://github.com/aFarkas/html5shiv)
