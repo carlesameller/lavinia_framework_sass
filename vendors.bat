@@ -4,6 +4,9 @@ echo "[INFO] -------------------------------------------------------------"
 echo "[INFO] INSTALLING PLUGINS"
 echo "[INFO] -------------------------------------------------------------"
 
+echo "[INFO] Installing ANIMATIONS(daneden/animate.css)"
+call npm install animate.css
+
 echo "[INFO] Installing MODAL(VodkaBears/Remodal)"
 call npm install remodal
 
@@ -30,3 +33,13 @@ call npm install onscreen
 
 echo "[INFO] Installing MASONRY (desandro/masonry)"
 call npm install masonry-layout
+
+echo "[INFO] Installing MATERIALIZECSS (Dogfalo/materialize)"
+call npm install Dogfalo/materialize
+
+echo "[INFO] -------------------------------------------------------------"
+echo "[INFO] MOVE & RENAME files from node_modules/ -> scss/"
+echo "[INFO] -------------------------------------------------------------"
+echo "[INFO] USE: Uncomment vendors from cam.scss"
+echo "[INFO] -------------------------------------------------------------"
+call grunt copy

@@ -10,14 +10,12 @@ Scss (http://sass-lang.com/)
 
 ## Vendor
 
-Materializecss "optional for forms" (http://materializecss.com/)
+Materializecss (http://materializecss.com/)
 
-### JS PLUGINS Recomended (install via NPM)
-* MODALS "REMODAL" [https://github.com/VodkaBears/Remodal](https://github.com/VodkaBears/Remodal)
+### JS PLUGINS Recomended
+* MODAL [https://github.com/VodkaBears/Remodal](https://github.com/VodkaBears/Remodal)
 * SLIDER [https://github.com/kenwheeler/slick](https://github.com/kenwheeler/slick)
-<!--* ANIMATED PROGRESSBARS [https://github.com/minddust/bootstrap-progressbar](https://github.com/minddust/bootstrap-progressbar)-->
 * CIRCULAR PROGRESSBARS [https://github.com/aterrien/jQuery-Knob](https://github.com/aterrien/jQuery-Knob)
-<!--* DATE PICKER [https://github.com/eternicode/bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker)-->
 * CUSTOM SCROLLBARS [https://github.com/malihu/malihu-custom-scrollbar-plugin](https://github.com/malihu/malihu-custom-scrollbar-plugin)
 * CUSTOM SELECTS [https://github.com/select2/select2](https://github.com/select2/select2)
 * RANGE SLIDER [https://github.com/IonDen/ion.rangeSlider](https://github.com/IonDen/ion.rangeSlider)
@@ -41,5 +39,6 @@ Materializecss "optional for forms" (http://materializecss.com/)
 * [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
 * [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
 * [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin)
+* [grunt-contrib-copy](https://github.com/gruntjs/grunt-contrib-copy)
 * [grunt-newer](https://github.com/tschaub/grunt-newer)
 * [grunt-postcss](https://github.com/nDmitry/grunt-postcss) (autoprefixer & cssnano)

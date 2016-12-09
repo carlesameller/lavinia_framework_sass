@@ -10,18 +10,15 @@ module.exports = function(grunt) {
             build: {
                 src: [
                     'node_modules/jquery/dist/jquery.min.js',
-                    //'js/vendor/check_radio/icheck.js',
-                    //'js/vendor/datepicker/bootstrap-datepicker.js',
-                    //'js/vendor/inViewport/jquery.onscreen.js',
-                    //'js/vendor/modal/remodal.min.js',
-                    //'js/vendor/select/select2.full.min.js',
-                    //'js/vendor/slider/slick.min.js',
-                    //'js/vendor/tooltips/jquery.tooltipster.js',
-                    //'js/vendor/range/ion.rangeSlider.js',
-                    //'js/vendor/progressbar/circular/jquery.knob.js',
-                    //'js/vendor/progressbar/linear/bootstrap-progressbar.js',
-                    //'js/vendor/scrollbars/jquery.mCustomScrollbar.js',
-                    //'js/vendor/range/ion.rangeSlider.js',
+                    //'node_modules/onscreen/dist/on-screen.umd.min.js',
+                    //'node_modules/remodal/dist/remodal.min.js',
+                    //'node_modules/select2/dist/js/select2.full.min.js',
+                    //'node_modules/slick-carousel/slick/slick.min.js',
+                    //'node_modules/tooltipster/dist/js/tooltipster.bundle.min.js',
+                    //'node_modules/ion-rangeslider/js/ion.rangeSlider.min.js',
+                    //'node_modules/jquery-knob/dist/jquery.knob.min.js',
+                    //'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js',
+                    //'node_modules/masonry-layout/dist/masonry.pkgd.min.js',
                     'js/vendor/material/materialize.js'
                 ],
                 dest: 'js/vendor.min.js'
@@ -77,6 +74,107 @@ module.exports = function(grunt) {
                 "postcss",
                 ['newer:imagemin']
             ]
+        },
+        //JUST FOR PLUGINS.BAT/SH
+        copy: {
+            main: {
+                files: [
+                    {
+                        expand: true,
+                        src: ['node_modules/animate.css/animate.css'],
+                        dest: 'scss/vendor/animate/',
+                        flatten: true,
+                        filter: 'isFile',
+
+                        rename: function(dest, src) {
+                            return dest + src.replace('.css','.scss');
+                        }
+                    },
+                    {
+                        expand: true,
+                        src: ['node_modules/remodal/dist/remodal.css'],
+                        dest: 'scss/vendor/modal/',
+                        flatten: true,
+                        filter: 'isFile',
+
+                        rename: function(dest, src) {
+                            return dest + src.replace('.css','.scss');
+                        }
+                    },
+                    {
+                        expand: true,
+                        src: ['node_modules/ion-rangeslider/css/ion.rangeSlider.css'],
+                        dest: 'scss/vendor/rangeslider/',
+                        flatten: true,
+                        filter: 'isFile',
+
+                        rename: function(dest, src) {
+                            return dest + src.replace('.css','.scss');
+                        }
+                    },
+                    {
+                        expand: true,
+                        src: ['node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css'],
+                        dest: 'scss/vendor/scrollbars/',
+                        flatten: true,
+                        filter: 'isFile',
+
+                        rename: function(dest, src) {
+                            return dest + src.replace('.css','.scss');
+                        }
+                    },
+                    {
+                        expand: true,
+                        src: ['node_modules/select2/dist/css/select2.css'],
+                        dest: 'scss/vendor/select2/',
+                        flatten: true,
+                        filter: 'isFile',
+
+                        rename: function(dest, src) {
+                            return dest + src.replace('.css','.scss');
+                        }
+                    },
+                    {
+                        expand: true,
+                        src: ['node_modules/slick-carousel/slick/slick.css'],
+                        dest: 'scss/vendor/slider/',
+                        flatten: true,
+                        filter: 'isFile',
+
+                        rename: function(dest, src) {
+                            return dest + src.replace('.css','.scss');
+                        }
+                    },
+                    {
+                        expand: true,
+                        src: ['node_modules/slick-carousel/slick/slick-theme.css'],
+                        dest: 'scss/vendor/slider/',
+                        flatten: true,
+                        filter: 'isFile',
+
+                        rename: function(dest, src) {
+                            return dest + src.replace('.css','.scss');
+                        }
+                    },
+                    {
+                        expand: true,
+                        src: ['node_modules/tooltipster/dist/css/tooltipster.bundle.css'],
+                        dest: 'scss/vendor/tooltips/',
+                        flatten: true,
+                        filter: 'isFile',
+
+                        rename: function(dest, src) {
+                            return dest + src.replace('.css','.scss');
+                        }
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/materialize-css/sass/',
+                        src: ['**'],
+                        dest: 'scss/vendor/materializecss/'
+                    }
+                ]
+            }
         }
     });
 
@@ -87,6 +185,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-newer');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Default task(s).
     grunt.registerTask('default', ['watch']);
