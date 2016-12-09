@@ -47,7 +47,7 @@ call composer install
 
 echo "[INFO]"
 echo "[INFO] -------------------------------------------------------------"
-echo "[INFO] Installing SASS for -MATERIALIZECSS- (via RUBY) ..."
+echo "[INFO] Installing SASS for (via RUBY) ..."
 echo "[INFO]"
 
 call gem install sass
@@ -57,4 +57,6 @@ echo "[INFO] -------------------------------------------------------------"
 echo "[INFO] RUNNING GRUNT ..."
 echo "[INFO]"
 
+call grunt copy
+call grunt uglify
 call grunt

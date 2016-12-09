@@ -55,4 +55,6 @@ echo "[INFO] -------------------------------------------------------------"
 echo "[INFO] RUNNING GRUNT ..."
 echo "[INFO]"
 
+grunt copy
+grunt uglify
 grunt
