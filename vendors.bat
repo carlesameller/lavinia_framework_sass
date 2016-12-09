@@ -38,8 +38,11 @@ echo "[INFO] Installing MATERIALIZECSS (Dogfalo/materialize)"
 call npm install Dogfalo/materialize
 
 echo "[INFO] -------------------------------------------------------------"
-echo "[INFO] MOVE & RENAME files from node_modules/ -> scss/"
+echo "[INFO] MOVE & RENAME files from node_modules/ -> scss/			  "
 echo "[INFO] -------------------------------------------------------------"
-echo "[INFO] USE: Uncomment vendors from cam.scss"
+echo "[INFO] USE:														  "
+echo "[INFO] Uncomment vendors from cam.scss						  	  "
+echo "[INFO] Uncomment vendors from gruntfile.js in uglify task			  "
 echo "[INFO] -------------------------------------------------------------"
 call grunt copy
+call grunt
