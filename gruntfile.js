@@ -31,7 +31,7 @@ module.exports = function(grunt) {
                     noCache: true
                 },
                 files: {                         // Dictionary of files
-                    'css/cam.css': 'sass/cam.scss'       // 'destination': 'source'
+                    'css/cam.css': 'scss/cam.scss'       // 'destination': 'source'
                 }
             }
         },
@@ -62,18 +62,33 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            files: [
-                'js/vendor/**/*.js',
-                "scss/**/*",
-                "img/src/**/*",
-                "gruntfile.js"
-            ],
-            tasks: [
-                "uglify",
-                "sass",
-                "postcss",
-                ['newer:imagemin']
-            ]
+            sass: {
+                files: [
+                    "scss/**/*"
+                ],
+                tasks: [
+                    "sass",
+                    "postcss"
+                ]
+            },
+            js: {
+                files: [
+                    'js/vendor/**/*.js',
+                    "gruntfile.js"
+                ],
+                tasks: [
+                    "uglify"
+                ]
+            },
+            img: {
+                files: [
+                    "img/src/**/*"
+                ],
+                tasks: [
+                    ['newer:imagemin']
+                ]
+            }
+
         },
         //JUST FOR VENDORS
         copy: {
