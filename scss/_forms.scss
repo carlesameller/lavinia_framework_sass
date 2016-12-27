@@ -9,7 +9,7 @@ select, input[type=text], input[type=password],input[type=url],input[type=tel],i
   padding: $form_items_input_padding;
   background-color: $form_items_bg;
   border-radius: $form_items_radius;
-  font-size: $standard-p;
+  font-size: $standard_font_size;
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
@@ -28,6 +28,6 @@ textarea {
   padding: $form_items_txtarea_padding;
   resize: none;
   border-radius: $form_items_radius;
-  font-size: $standard-p;
+  font-size: $standard_font_size;
 }
 

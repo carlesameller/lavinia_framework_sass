@@ -4,51 +4,34 @@
 /*-- BUTTONS (tag <button>) --*/
 .btn {
   border: 0;
-  padding: 0;
   @extend .transitioned;
-  @extend .relative;
+  position: relative;
+  text-align: center;
+  padding: 0 $btn_lateral_padding;
+  border-radius: $btn_std_border_radius;
+  -moz-border-radius: $btn_std_border_radius;
+  -webkit-border-radius: $btn_std_border_radius;
+  &:hover{
+    background-color: $btn_std_hover_color;
+  }
   &.big {
-    text-align: $big-txt-align;
-    min-width: $big-minwidth;
-    height: $big-height;
-    padding: 0 $btn-lateral-pad;
-    border-radius: $std-radius;
-    -moz-border-radius: $std-radius;
-    -webkit-border-radius: $std-radius;
-    &:hover{
-      background-color: $std-hover-color;
-    }
+    min-width: $btn_big_min_width;
+    height: $btn_big_height;
   }
   &.medium {
-    text-align: $medium-txt-align;
-    min-width: $medium-minwidth;
-    height: $medium-height;
-    padding: 0 $btn-lateral-pad;
-    border-radius: $std-radius;
-    -moz-border-radius: $std-radius;
-    -webkit-border-radius: $std-radius;
-    &:hover{
-      background-color: $std-hover-color;
-    }
+    min-width: $btn_medium_min_width;
+    height: $btn_medium_height;
   }
   &.small {
-    text-align: $small-txt-align;
-    min-width: $small-minwidth;
-    height: $small-height;
-    padding: 0 $btn-lateral-pad;
-    border-radius: $std-radius;
-    -moz-border-radius: $std-radius;
-    -webkit-border-radius: $std-radius;
-    &:hover{
-      background-color: $std-hover-color;
-    }
+    min-width: $btn_small_min_width;
+    height: $btn_small_height;
   }
 }
 
 /*-- ADJUST TO APPLY TO <a> --*/
 a.btn{
   display: inline-block;
-  &.big {line-height: $big-height;}
-  &.medium {line-height: $medium-height;}
-  &.small {line-height: $small-height;}
+  &.big {line-height: $btn_big_height;}
+  &.medium {line-height: $btn_medium_height;}
+  &.small {line-height: $btn_small_height;}
 }

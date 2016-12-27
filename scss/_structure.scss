@@ -14,7 +14,7 @@ html, body {
     text-overflow: ellipsis;
     overflow: hidden;
     font-weight: normal;
-    font-size: $standard-p;
+    font-size: $standard_font_size;
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
   }
@@ -53,7 +53,7 @@ main {
 .wrapper {
   display: block;
   width: 100%;
-  max-width: $wrapper-width;
+  max-width: $wrapper_width;
   margin: 0 auto;
   position: relative;
 }

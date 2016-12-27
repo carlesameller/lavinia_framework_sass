@@ -5,14 +5,14 @@ $enable_line_height: false;
 
 /*-- STRUCTURE --*/
 $body_bg: #f9f9f9;
-$wrapper-width: 960px;
+$wrapper_width: 960px;
 
 //USED TO PUSH FOOTER ALWAYS BOTTOM
 $footer_height: 100px;
 $footer_bg: #333;
 
 /*-- GRID SYSTEM --*/
-$col-number: 12;
+$col_number: 12;
 $gutter: 10px;
 
 /*-- BREAKPOINTS --*/
@@ -34,7 +34,7 @@ $primary_font_family: Arial, Helvetica, sans-serif;
 $secondary_font_family: Helvetica, Arial, sans-serif;
 $max_font_size: 50;
 $max_line_height: $max_font_size + 30;
-$standard-p: 13px;
+$standard_font_size: 13px;
 $primary_color: #333;
 
 /*-- FORM ITEMS --*/
@@ -49,23 +49,20 @@ $form_items_txtarea_height: 160px;
 $form_items_txtarea_padding: 10px;
 
 /*-- BUTTONS --*/
-$btn-lateral-pad: 10px; //both sides
-$std-radius: 4px;
+$btn_lateral_padding: 10px;
+$btn_std_border_radius: 4px;
 
 // HOVER
-$std-hover-color: #ccc;
+$btn_std_hover_color: transparent;
 
 // BIG SIZE BUTTON
-$big-minwidth: 200px;
-$big-height: 30px;
-$big-txt-align: center;
+$btn_big_min_width: 200px;
+$btn_big_height: 30px;
 
 // MEDIUM SIZE BUTTON
-$medium-minwidth: 150px;
-$medium-height: 25px;
-$medium-txt-align: center;
+$btn_medium_min_width: 150px;
+$btn_medium_height: 25px;
 
 // SMALL SIZE BUTTON
-$small-minwidth: 75px;
-$small-height: 20px;
-$small-txt-align: center;
+$btn_small_min_width: 75px;
+$btn_small_height: 20px;

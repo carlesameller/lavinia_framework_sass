@@ -43,7 +43,7 @@
       &.flex_align_baseline{@include align-items(baseline);}
       &.flex_align_stretch{@include align-items(stretch);}
       [class^="col_"], [class*=" col_"]{
-        @for $i from 1 through $col-number / 2 {
+        @for $i from 1 through $col_number / 2 {
           &.flex_order#{$i}{@include order($i);}
         }
         display: inherit;
@@ -83,7 +83,7 @@
         &.sm_flex_align_baseline{@include align-items(baseline);}
         &.sm_flex_align_stretch{@include align-items(stretch);}
         [class^="col_"], [class*=" col_"]{
-          @for $i from 1 through $col-number / 2 {
+          @for $i from 1 through $col_number / 2 {
             &.sm_flex_order#{$i}{@include order($i);}
           }
           display: inherit;
@@ -119,7 +119,7 @@
         &.xs_flex_align_baseline{@include align-items(baseline);}
         &.xs_flex_align_stretch{@include align-items(stretch);}
         [class^="col_"], [class*=" col_"]{
-          @for $i from 1 through $col-number / 2 {
+          @for $i from 1 through $col_number / 2 {
             &.xs_flex_order#{$i}{@include order($i);}
           }
           display: inherit;
@@ -135,30 +135,30 @@
 
 /*-- GRID MAKER --*/
 
-@for $i from 1 through $col-number {
+@for $i from 1 through $col_number {
   /*-- GENERIC COLUMN --*/
-  .col_#{$i} {width: 100% / $col-number * $i;}
-  .col_off#{$i} {margin-left: 100% / $col-number * $i;}
+  .col_#{$i} {width: 100% / $col_number * $i;}
+  .col_off#{$i} {margin-left: 100% / $col_number * $i;}
 }
 
 /*-- MD COLUMN --*/
 @media (min-width: $md_from) and (max-width: $md_to) {
-  @for $i from 1 through $col-number {
-    .md_#{$i} {width: 100% / $col-number * $i;}
-    .md_off#{$i} {margin-left: 100% / $col-number * $i;}
+  @for $i from 1 through $col_number {
+    .md_#{$i} {width: 100% / $col_number * $i;}
+    .md_off#{$i} {margin-left: 100% / $col_number * $i;}
   }
 }
 /*-- SM COLUMN --*/
 @media (min-width: $sm_from) and (max-width: $sm_to) {
-  @for $i from 1 through $col-number {
-    .sm_#{$i} {width: 100% / $col-number * $i;}
-    .sm_off#{$i} {margin-left: 100% / $col-number * $i;}
+  @for $i from 1 through $col_number {
+    .sm_#{$i} {width: 100% / $col_number * $i;}
+    .sm_off#{$i} {margin-left: 100% / $col_number * $i;}
   }
 }
 /*-- XS COLUMN --*/
 @media (min-width: $xs_from) and (max-width: $xs_to) {
-  @for $i from 1 through $col-number {
-    .xs_#{$i} {width: 100% / $col-number * $i;}
-    .xs_off#{$i} {margin-left: 100% / $col-number * $i;}
+  @for $i from 1 through $col_number {
+    .xs_#{$i} {width: 100% / $col_number * $i;}
+    .xs_off#{$i} {margin-left: 100% / $col_number * $i;}
   }
 }

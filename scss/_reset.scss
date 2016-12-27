@@ -11,7 +11,7 @@
 }
 
 p {
-  font-size: $standard-p;
+  font-size: $standard_font_size;
 }
 
 a {
@@ -31,11 +31,11 @@ fieldset {
 ul, menu, dir {
   display: block;
   list-style-type: none;
-  -webkit-margin-before: 0px;
-  -webkit-margin-after: 0px;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  -webkit-padding-start: 0px;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
   margin: 0;
   padding: 0;
 }
