@@ -13,26 +13,23 @@ $col_number: 12;
 $gutter: 10px;
 
 /*-- BREAKPOINTS --*/
-
 //MEDIUM
 $md_from: 981px;
 $md_to: 1280px;
-
 //TABLET PORTRAIT
 $sm_from: 768px;
 $sm_to: 980px;
-
 //MOBILE
 $xs_from: 0px;
 $xs_to: 767px;
 
 /*-- TYPOGRAPHY --*/
 $primary_font_family: Arial, Helvetica, sans-serif;
+$primary_font_color: #333;
 $secondary_font_family: Helvetica, Arial, sans-serif;
 $max_font_size: 50;
 $max_line_height: $max_font_size + 30;
 $standard_font_size: 13px;
-$primary_color: #333;
 
 /*-- FORM ITEMS --*/
 $form_items_radius: 4px;
