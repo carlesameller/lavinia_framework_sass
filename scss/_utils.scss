@@ -13,13 +13,12 @@
 .dtable{display: table;}
 .dtablecell{display: table-cell;}
 
-
 /*-- VERTICAL ALIGN --*/
 .vtop {vertical-align: top;}
 .vmid {vertical-align: middle;}
 .vbot {vertical-align: bottom;}
 
-/*-- TEXT ALIGN --*/
+/*-- LATERAL ALIGN --*/
 .al_center{text-align: center;}
 .al_right{text-align: right;}
 .al_left{text-align: left;}
@@ -36,6 +35,10 @@
 /*-- VARIOS --*/
 .unselectable{
   @include user-select(none);
+}
+.bordered{
+  border-style: solid;
+  border-width: 1px;
 }
 
 /*-- BASIC BORDER RADIUS --*/
@@ -75,11 +78,6 @@
 /*-- SPECIFIC HEIGHTS & WIDTHS --*/
 .h100{height: 100%;}
 .w20{width: 20%;}
-.w25{width: 25%;}
-.w33{width: 33.333%;}
-.w50{width: 50%;}
-.w66{width: 66.666%;}
-.w75{width: 75%;}
 .w100{width: 100%;}
 
 /*-- RESP. IFRAME --*/
@@ -165,7 +163,9 @@
 .pdright40{padding-right: 40px;}
 .pdright50{padding-right: 50px;}
 
+.pd5 {padding: 5px;}
 .pd10 {padding: 10px;}
+.pd15 {padding: 15px;}
 .pd20 {padding: 20px;}
 .pd30 {padding: 30px;}
 .pd40 {padding: 40px;}
