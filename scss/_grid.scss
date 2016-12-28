@@ -22,6 +22,14 @@
   &:after, &:before{
     clear: both;
   }
+  &.nogutter{
+    padding-left:  $gutter; padding-right: $gutter;
+    [class^="col_"], [class*=" col_"] {padding: 0;min-height: 1px;}
+  }
+  &.halfgutter{
+    padding-left:  $gutter/2; padding-right: $gutter /2;
+    [class^="col_"], [class*=" col_"] {padding: 0 $gutter/2; min-height: 1px;}
+  }
   @if $enable_flexbox {
     /*-- FLEXBOX GRID --*/
     &.flex{
