@@ -2,42 +2,33 @@
 @import "config";
 
 /*-- THEME COLORS --*/
+@mixin colorset($name, $color) {
+  .#{$name} {color: $color;}
+  .bg_#{$name} {background-color: $color;}
+  .bc_#{$name} {border-color: $color;}
+}
+
 //GRAYSCALE
-$white:#ffffff;
-.white{color: $white;}
-.bg_white {background-color: $white;}
-
-$black:#000000;
-.black{color: $black;}
-.bg_black {background-color: $black;}
-
+$white: #FFFFFF;
+@include colorset("white", $white);
+$black: #000000;
+@include colorset("black", $black);
 $grey: #999999;
-.grey{color: $grey;}
-.bg_grey {background-color: $grey;}
-
-$lgrey: #cccccc;
-.lgrey{color: $lgrey;}
-.bg_lgrey {background-color: $lgrey;}
-
+@include colorset("grey", $grey);
+$lgrey: #CCCCCC;
+@include colorset("lgrey", $lgrey);
 $dgrey: #333333;
-.dgrey{color: $dgrey;}
-.bg_dgrey {background-color: $dgrey;}
-
+@include colorset("dgrey", $dgrey);
 $dgrey2: #666666;
-.dgrey2{color: $dgrey2;}
-.bg_dgrey2 {background-color: $dgrey2;}
+@include colorset("dgrey2", $dgrey2);
 
 //ALERTS
-$al_green: #92c254;
-.al_green{color: $al_green;}
-.bg_al_green{background-color: $al_green;}
-
-$al_red: #d12205;
-.al_red{color: $al_red;}
-.bg_al_red{background-color: $al_red;}
-
-$al_yellow: #fbbe05;
-.al_yellow{color: $al_yellow;}
-.bg_al_yellow{background-color: $al_yellow;}
+$al_succes: #92c254;
+@include colorset("al_succes", $al_succes);
+$al_error: #d12205;
+@include colorset("al_error", $al_error);
+$al_warning: #fbbe05;
+@include colorset("al_warning", $al_warning);
 
 //PROJECT COLORS
+
