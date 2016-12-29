@@ -20,8 +20,8 @@ strong, b{font-weight: 700;}
 .v_hidden{visibility: hidden;}
 .nowrap{white-space: nowrap;}
 
-.light_shadow {text-shadow: 1px 1px 2px #919191;}
-.dark_shadow {text-shadow: 2px 2px 2px #000;}
+.light_shadow {text-shadow: 1px 1px 2px $dgrey2;}
+.dark_shadow {text-shadow: 2px 2px 2px $black;}
 
 .underlined{text-decoration: underline;}
 .nodeco{text-decoration: none;}
