@@ -54,6 +54,11 @@
         @for $i from 1 through $col_number / 2 {
           &.flex_order#{$i}{@include order($i);}
         }
+        &.flex_self_start{@include align-self(flex-start);}
+        &.flex_self_end{@include align-self(flex-end);}
+        &.flex_self_center{@include align-self(center);}
+        &.flex_self_baseline{@include align-self(baseline);}
+        &.flex_self_stretch{@include align-self(stretch);}
         display: inherit;
         > div{
           width: 100%;
@@ -63,6 +68,47 @@
     &.noflex {
       [class^="col_"], [class*=" col_"] {
         display: inline-block;
+      }
+    }
+  }
+}
+
+@media (min-width: $md_from) and (max-width: $md_to) {
+  .row{
+    @if $enable_flexbox {
+      /*-- FLEXBOX GRID --*/
+      &.md_flex{
+        width: 100%;
+        @include display(flex);
+        @include flex-wrap(wrap);
+        &.md_flex_direction_row{@include flex-direction(row);}
+        &.md_flex_direction_column{@include flex-direction(column);}
+        &.md_flex_wrap{@include flex-wrap(wrap);}
+        &.md_flex_nowrap{@include flex-wrap(nowrap);}
+        &.md_flex_justify_start{@include justify-content(flex-start);}
+        &.md_flex_justify_end{@include justify-content(flex-end);}
+        &.md_flex_justify_center{@include justify-content(center);}
+        &.md_flex_justify_between{@include justify-content(space-between);}
+        &.md_flex_justify_around{@include justify-content(space-around);}
+        &.md_flex_align_start{@include align-items(flex-start);}
+        &.md_flex_align_end{@include align-items(flex-end);}
+        &.md_flex_align_center{@include align-items(center);}
+        &.md_flex_align_baseline{@include align-items(baseline);}
+        &.md_flex_align_stretch{@include align-items(stretch);}
+        [class^="col_"], [class*=" col_"]{
+          @for $i from 1 through $col_number / 2 {
+            &.md_flex_order#{$i}{@include order($i);}
+          }
+          &.md_flex_self_start{@include align-self(flex-start);}
+          &.md_flex_self_end{@include align-self(flex-end);}
+          &.md_flex_self_center{@include align-self(center);}
+          &.md_flex_self_baseline{@include align-self(baseline);}
+          &.md_flex_self_stretch{@include align-self(stretch);}
+          display: inherit;
+          > div{
+            width: 100%;
+          }
+        }
       }
     }
   }
@@ -94,6 +140,11 @@
           @for $i from 1 through $col_number / 2 {
             &.sm_flex_order#{$i}{@include order($i);}
           }
+          &.sm_flex_self_start{@include align-self(flex-start);}
+          &.sm_flex_self_end{@include align-self(flex-end);}
+          &.sm_flex_self_center{@include align-self(center);}
+          &.sm_flex_self_baseline{@include align-self(baseline);}
+          &.sm_flex_self_stretch{@include align-self(stretch);}
           display: inherit;
           > div{
             width: 100%;
@@ -130,6 +181,11 @@
           @for $i from 1 through $col_number / 2 {
             &.xs_flex_order#{$i}{@include order($i);}
           }
+          &.xs_flex_self_start{@include align-self(flex-start);}
+          &.xs_flex_self_end{@include align-self(flex-end);}
+          &.xs_flex_self_center{@include align-self(center);}
+          &.xs_flex_self_baseline{@include align-self(baseline);}
+          &.xs_flex_self_stretch{@include align-self(stretch);}
           display: inherit;
           > div{
             width: 100%;
