@@ -13,6 +13,12 @@ $col_number: 12;
 $gutter: 10px;
 
 /*-- BREAKPOINTS --*/
+/*PREFIXES*/
+$lg_prefix: col_;
+$md_prefix: md_;
+$sm_prefix: sm_;
+$xs_prefix: xs_;
+
 //MEDIUM
 $md_from: 981px;
 $md_to: 1280px;

@@ -4,7 +4,7 @@
 /*-- CUSTOM GRID SYSTEM --*/
 
 .gutter{padding-left:  $gutter; padding-right: $gutter;}
-[class^="col_"], [class*=" col_"]{
+[class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"]{
   &.halfgutter{padding: 0 $gutter/2; min-height: 1px;}
   &.nogutter  {padding: 0; min-height: 1px;}
   &.vmid {vertical-align: middle;}
@@ -24,11 +24,11 @@
   }
   &.nogutter{
     padding-left:  $gutter; padding-right: $gutter;
-    [class^="col_"], [class*=" col_"] {padding: 0;min-height: 1px;}
+    [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"] {padding: 0;min-height: 1px;}
   }
   &.halfgutter{
     padding-left:  $gutter/2; padding-right: $gutter /2;
-    [class^="col_"], [class*=" col_"] {padding: 0 $gutter/2; min-height: 1px;}
+    [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"] {padding: 0 $gutter/2; min-height: 1px;}
   }
   @if $enable_flexbox {
     /*-- FLEXBOX GRID --*/
@@ -50,7 +50,7 @@
       &.flex_align_center{@include align-items(center);}
       &.flex_align_baseline{@include align-items(baseline);}
       &.flex_align_stretch{@include align-items(stretch);}
-      [class^="col_"], [class*=" col_"]{
+      [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"]{
         @for $i from 1 through $col_number / 2 {
           &.flex_order#{$i}{@include order($i);}
         }
@@ -66,7 +66,7 @@
       }
     }
     &.noflex {
-      [class^="col_"], [class*=" col_"] {
+      [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"] {
         display: inline-block;
       }
     }
@@ -77,33 +77,33 @@
   .row{
     @if $enable_flexbox {
       /*-- FLEXBOX GRID --*/
-      &.md_flex{
+      &.#{$md_prefix}flex{
         width: 100%;
         @include display(flex);
         @include flex-wrap(wrap);
-        &.md_flex_direction_row{@include flex-direction(row);}
-        &.md_flex_direction_column{@include flex-direction(column);}
-        &.md_flex_wrap{@include flex-wrap(wrap);}
-        &.md_flex_nowrap{@include flex-wrap(nowrap);}
-        &.md_flex_justify_start{@include justify-content(flex-start);}
-        &.md_flex_justify_end{@include justify-content(flex-end);}
-        &.md_flex_justify_center{@include justify-content(center);}
-        &.md_flex_justify_between{@include justify-content(space-between);}
-        &.md_flex_justify_around{@include justify-content(space-around);}
-        &.md_flex_align_start{@include align-items(flex-start);}
-        &.md_flex_align_end{@include align-items(flex-end);}
-        &.md_flex_align_center{@include align-items(center);}
-        &.md_flex_align_baseline{@include align-items(baseline);}
-        &.md_flex_align_stretch{@include align-items(stretch);}
-        [class^="col_"], [class*=" col_"]{
+        &.#{$md_prefix}flex_direction_row{@include flex-direction(row);}
+        &.#{$md_prefix}flex_direction_column{@include flex-direction(column);}
+        &.#{$md_prefix}flex_wrap{@include flex-wrap(wrap);}
+        &.#{$md_prefix}flex_nowrap{@include flex-wrap(nowrap);}
+        &.#{$md_prefix}flex_justify_start{@include justify-content(flex-start);}
+        &.#{$md_prefix}flex_justify_end{@include justify-content(flex-end);}
+        &.#{$md_prefix}flex_justify_center{@include justify-content(center);}
+        &.#{$md_prefix}flex_justify_between{@include justify-content(space-between);}
+        &.#{$md_prefix}flex_justify_around{@include justify-content(space-around);}
+        &.#{$md_prefix}flex_align_start{@include align-items(flex-start);}
+        &.#{$md_prefix}flex_align_end{@include align-items(flex-end);}
+        &.#{$md_prefix}flex_align_center{@include align-items(center);}
+        &.#{$md_prefix}flex_align_baseline{@include align-items(baseline);}
+        &.#{$md_prefix}flex_align_stretch{@include align-items(stretch);}
+        [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"]{
           @for $i from 1 through $col_number / 2 {
-            &.md_flex_order#{$i}{@include order($i);}
+            &.#{$md_prefix}flex_order#{$i}{@include order($i);}
           }
-          &.md_flex_self_start{@include align-self(flex-start);}
-          &.md_flex_self_end{@include align-self(flex-end);}
-          &.md_flex_self_center{@include align-self(center);}
-          &.md_flex_self_baseline{@include align-self(baseline);}
-          &.md_flex_self_stretch{@include align-self(stretch);}
+          &.#{$md_prefix}flex_self_start{@include align-self(flex-start);}
+          &.#{$md_prefix}flex_self_end{@include align-self(flex-end);}
+          &.#{$md_prefix}flex_self_center{@include align-self(center);}
+          &.#{$md_prefix}flex_self_baseline{@include align-self(baseline);}
+          &.#{$md_prefix}flex_self_stretch{@include align-self(stretch);}
           display: inherit;
           > div{
             width: 100%;
@@ -118,33 +118,33 @@
   .row{
     @if $enable_flexbox {
       /*-- FLEXBOX GRID --*/
-      &.sm_flex{
+      &.#{$sm_prefix}flex{
         width: 100%;
         @include display(flex);
         @include flex-wrap(wrap);
-        &.sm_flex_direction_row{@include flex-direction(row);}
-        &.sm_flex_direction_column{@include flex-direction(column);}
-        &.sm_flex_wrap{@include flex-wrap(wrap);}
-        &.sm_flex_nowrap{@include flex-wrap(nowrap);}
-        &.sm_flex_justify_start{@include justify-content(flex-start);}
-        &.sm_flex_justify_end{@include justify-content(flex-end);}
-        &.sm_flex_justify_center{@include justify-content(center);}
-        &.sm_flex_justify_between{@include justify-content(space-between);}
-        &.sm_flex_justify_around{@include justify-content(space-around);}
-        &.sm_flex_align_start{@include align-items(flex-start);}
-        &.sm_flex_align_end{@include align-items(flex-end);}
-        &.sm_flex_align_center{@include align-items(center);}
-        &.sm_flex_align_baseline{@include align-items(baseline);}
-        &.sm_flex_align_stretch{@include align-items(stretch);}
-        [class^="col_"], [class*=" col_"]{
+        &.#{$sm_prefix}flex_direction_row{@include flex-direction(row);}
+        &.#{$sm_prefix}flex_direction_column{@include flex-direction(column);}
+        &.#{$sm_prefix}flex_wrap{@include flex-wrap(wrap);}
+        &.#{$sm_prefix}flex_nowrap{@include flex-wrap(nowrap);}
+        &.#{$sm_prefix}flex_justify_start{@include justify-content(flex-start);}
+        &.#{$sm_prefix}flex_justify_end{@include justify-content(flex-end);}
+        &.#{$sm_prefix}flex_justify_center{@include justify-content(center);}
+        &.#{$sm_prefix}flex_justify_between{@include justify-content(space-between);}
+        &.#{$sm_prefix}flex_justify_around{@include justify-content(space-around);}
+        &.#{$sm_prefix}flex_align_start{@include align-items(flex-start);}
+        &.#{$sm_prefix}flex_align_end{@include align-items(flex-end);}
+        &.#{$sm_prefix}flex_align_center{@include align-items(center);}
+        &.#{$sm_prefix}flex_align_baseline{@include align-items(baseline);}
+        &.#{$sm_prefix}flex_align_stretch{@include align-items(stretch);}
+        [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"]{
           @for $i from 1 through $col_number / 2 {
-            &.sm_flex_order#{$i}{@include order($i);}
+            &.#{$sm_prefix}flex_order#{$i}{@include order($i);}
           }
-          &.sm_flex_self_start{@include align-self(flex-start);}
-          &.sm_flex_self_end{@include align-self(flex-end);}
-          &.sm_flex_self_center{@include align-self(center);}
-          &.sm_flex_self_baseline{@include align-self(baseline);}
-          &.sm_flex_self_stretch{@include align-self(stretch);}
+          &.#{$sm_prefix}flex_self_start{@include align-self(flex-start);}
+          &.#{$sm_prefix}flex_self_end{@include align-self(flex-end);}
+          &.#{$sm_prefix}flex_self_center{@include align-self(center);}
+          &.#{$sm_prefix}flex_self_baseline{@include align-self(baseline);}
+          &.#{$sm_prefix}flex_self_stretch{@include align-self(stretch);}
           display: inherit;
           > div{
             width: 100%;
@@ -159,33 +159,33 @@
   .row{
     @if $enable_flexbox {
       /*-- FLEXBOX GRID --*/
-      &.xs_flex{
+      &.#{$xs_prefix}flex{
         width: 100%;
         @include display(flex);
         @include flex-wrap(wrap);
-        &.xs_flex_direction_row{@include flex-direction(row);}
-        &.xs_flex_direction_column{@include flex-direction(column);}
-        &.xs_flex_wrap{@include flex-wrap(wrap);}
-        &.xs_flex_nowrap{@include flex-wrap(nowrap);}
-        &.xs_flex_justify_start{@include justify-content(flex-start);}
-        &.xs_flex_justify_end{@include justify-content(flex-end);}
-        &.xs_flex_justify_center{@include justify-content(center);}
-        &.xs_flex_justify_between{@include justify-content(space-between);}
-        &.xs_flex_justify_around{@include justify-content(space-around);}
-        &.xs_flex_align_start{@include align-items(flex-start);}
-        &.xs_flex_align_end{@include align-items(flex-end);}
-        &.xs_flex_align_center{@include align-items(center);}
-        &.xs_flex_align_baseline{@include align-items(baseline);}
-        &.xs_flex_align_stretch{@include align-items(stretch);}
-        [class^="col_"], [class*=" col_"]{
+        &.#{$xs_prefix}flex_direction_row{@include flex-direction(row);}
+        &.#{$xs_prefix}flex_direction_column{@include flex-direction(column);}
+        &.#{$xs_prefix}flex_wrap{@include flex-wrap(wrap);}
+        &.#{$xs_prefix}flex_nowrap{@include flex-wrap(nowrap);}
+        &.#{$xs_prefix}flex_justify_start{@include justify-content(flex-start);}
+        &.#{$xs_prefix}flex_justify_end{@include justify-content(flex-end);}
+        &.#{$xs_prefix}flex_justify_center{@include justify-content(center);}
+        &.#{$xs_prefix}flex_justify_between{@include justify-content(space-between);}
+        &.#{$xs_prefix}flex_justify_around{@include justify-content(space-around);}
+        &.#{$xs_prefix}flex_align_start{@include align-items(flex-start);}
+        &.#{$xs_prefix}flex_align_end{@include align-items(flex-end);}
+        &.#{$xs_prefix}flex_align_center{@include align-items(center);}
+        &.#{$xs_prefix}flex_align_baseline{@include align-items(baseline);}
+        &.#{$xs_prefix}flex_align_stretch{@include align-items(stretch);}
+        [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"]{
           @for $i from 1 through $col_number / 2 {
-            &.xs_flex_order#{$i}{@include order($i);}
+            &.#{$xs_prefix}flex_order#{$i}{@include order($i);}
           }
-          &.xs_flex_self_start{@include align-self(flex-start);}
-          &.xs_flex_self_end{@include align-self(flex-end);}
-          &.xs_flex_self_center{@include align-self(center);}
-          &.xs_flex_self_baseline{@include align-self(baseline);}
-          &.xs_flex_self_stretch{@include align-self(stretch);}
+          &.#{$xs_prefix}flex_self_start{@include align-self(flex-start);}
+          &.#{$xs_prefix}flex_self_end{@include align-self(flex-end);}
+          &.#{$xs_prefix}flex_self_center{@include align-self(center);}
+          &.#{$xs_prefix}flex_self_baseline{@include align-self(baseline);}
+          &.#{$xs_prefix}flex_self_stretch{@include align-self(stretch);}
           display: inherit;
           > div{
             width: 100%;
@@ -201,34 +201,34 @@
 
 @for $i from 1 through $col_number {
   /*-- GENERIC COLUMN --*/
-  .col_#{$i} {width: 100% / $col_number * $i;}
-  .col_off#{$i} {margin-left: 100% / $col_number * $i;}
+  .#{$lg_prefix}#{$i} {width: 100% / $col_number * $i;}
+  .#{$lg_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
 }
 
 /*-- MD COLUMN --*/
 @media (min-width: $md_from) and (max-width: $md_to) {
   @for $i from 1 through $col_number {
-    .md_#{$i} {width: 100% / $col_number * $i;}
+    .#{$md_prefix}#{$i} {width: 100% / $col_number * $i;}
   }
   @for $i from 0 through $col_number - 1 {
-    .md_off#{$i} {margin-left: 100% / $col_number * $i;}
+    .#{$md_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
   }
 }
 /*-- SM COLUMN --*/
 @media (min-width: $sm_from) and (max-width: $sm_to) {
   @for $i from 1 through $col_number {
-    .sm_#{$i} {width: 100% / $col_number * $i;}
+    .#{$sm_prefix}#{$i} {width: 100% / $col_number * $i;}
   }
   @for $i from 0 through $col_number - 1 {
-    .sm_off#{$i} {margin-left: 100% / $col_number * $i;}
+    .#{$sm_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
   }
 }
 /*-- XS COLUMN --*/
 @media (min-width: $xs_from) and (max-width: $xs_to) {
   @for $i from 1 through $col_number {
-    .xs_#{$i} {width: 100% / $col_number * $i;}
+    .#{$xs_prefix}#{$i} {width: 100% / $col_number * $i;}
   }
   @for $i from 0 through $col_number - 1 {
-    .xs_off#{$i} {margin-left: 100% / $col_number * $i;}
+    .#{$xs_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
   }
 }

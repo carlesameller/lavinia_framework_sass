@@ -43,33 +43,33 @@ $a: 1; // == i++
 $a: 1; // == i++
 /*-- MD FONT-SIZE --*/
 @media (min-width: $md_from) and (max-width: $md_to) {
-  @for $i from 9 through 24 {.md_x#{$i} {font-size: $i + px;}}
+  @for $i from 9 through 24 {.#{$md_prefix}x#{$i} {font-size: $i + px;}}
   @for $i from 24 through $max_font_size {
     $a : $a + 1;
     @if ($i + $a <= $max_font_size){
-      .md_x#{$i + $a} {font-size: $i + $a + px;}
+      .#{$md_prefix}x#{$i + $a} {font-size: $i + $a + px;}
     }
   }
 }
 $a: 1; // == i++
 /*-- SM FONT-SIZE --*/
 @media (min-width: $sm_from) and (max-width: $sm_to) {
-  @for $i from 9 through 24 {.sm_x#{$i} {font-size: $i + px;}}
+  @for $i from 9 through 24 {.#{$sm_prefix}x#{$i} {font-size: $i + px;}}
   @for $i from 24 through $max_font_size {
     $a : $a + 1;
     @if ($i + $a <= $max_font_size){
-      .sm_x#{$i + $a} {font-size: $i + $a + px;}
+      .#{$sm_prefix}x#{$i + $a} {font-size: $i + $a + px;}
     }
   }
 }
 $a: 1; // == i++
 /*-- XS FONT-SIZE --*/
 @media (min-width: $xs_from) and (max-width: $xs_to) {
-  @for $i from 9 through 24 {.xs_x#{$i} {font-size: $i + px;}}
+  @for $i from 9 through 24 {.#{$xs_prefix}x#{$i} {font-size: $i + px;}}
   @for $i from 24 through $max_font_size {
     $a : $a + 1;
     @if ($i + $a <= $max_font_size){
-      .xs_x#{$i + $a} {font-size: $i + $a + px;}
+      .#{$xs_prefix}x#{$i + $a} {font-size: $i + $a + px;}
     }
   }
 }
@@ -89,33 +89,33 @@ $a: 1; // == i++
   /*-- MD line-height --*/
   $a: 1; // == i++
   @media (min-width: $md_from) and (max-width: $md_to) {
-    @for $i from 9 through 24 {.md_lh#{$i} {line-height: $i + px;}}
+    @for $i from 9 through 24 {.#{$md_prefix}lh#{$i} {line-height: $i + px;}}
     @for $i from 24 through $max_line_height {
       $a : $a + 1;
       @if ($i + $a <= $max_line_height){
-        .md_lh#{$i + $a} {line-height: $i + $a + px;}
+        .#{$md_prefix}lh#{$i + $a} {line-height: $i + $a + px;}
       }
     }
   }
   /*-- SM line-height --*/
   $a: 1; // == i++
   @media (min-width: $sm_from) and (max-width: $sm_to) {
-    @for $i from 9 through 24 {.sm_lh#{$i} {line-height: $i + px;}}
+    @for $i from 9 through 24 {.#{$sm_prefix}lh#{$i} {line-height: $i + px;}}
     @for $i from 24 through $max_line_height {
       $a : $a + 1;
       @if ($i + $a <= $max_line_height){
-        .sm_lh#{$i + $a} {line-height: $i + $a + px;}
+        .#{$sm_prefix}lh#{$i + $a} {line-height: $i + $a + px;}
       }
     }
   }
   /*-- XS line-height --*/
   $a: 1; // == i++
   @media (min-width: $xs_from) and (max-width: $xs_to) {
-    @for $i from 9 through 24 {.xs_lh#{$i} {line-height: $i + px;}}
+    @for $i from 9 through 24 {.#{$xs_prefix}lh#{$i} {line-height: $i + px;}}
     @for $i from 24 through $max_line_height {
       $a : $a + 1;
       @if ($i + $a <= $max_line_height){
-        .xs_lh#{$i + $a} {line-height: $i + $a + px;}
+        .#{$xs_prefix}lh#{$i + $a} {line-height: $i + $a + px;}
       }
     }
   }
