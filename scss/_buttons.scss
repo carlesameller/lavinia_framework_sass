@@ -26,7 +26,11 @@
     min-width: $btn_small_min_width;
     height: $btn_small_height;
   }
+  &.w100{
+    min-width: 100%;
+  }
 }
+
 
 /*-- ADJUST TO APPLY TO <a> --*/
 a.btn{
