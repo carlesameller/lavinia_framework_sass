@@ -1,6 +1,6 @@
 # Lavinia Next: Front-End Framework
 
-Docs http://framework.lavint.net/(http://framework.lavint.net/)
+Docs [http://framework.lavint.net/](http://framework.lavint.net/)
 
 ## Template Engine
 
