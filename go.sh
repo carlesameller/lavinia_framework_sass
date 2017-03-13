@@ -30,7 +30,7 @@ echo "                             .i00001               .;;.f0000i"
 echo "                            f0000001              C00000001"
 
 echo "[INFO] -------------------------------------------------------------"
-echo "[INFO] Installing vendors and dependencies (via NPM)				  "
+echo "[INFO] Installing vendors and dependencies (via NPM)"
 echo "[INFO] -------------------------------------------------------------"
 
 npm install
@@ -42,13 +42,7 @@ echo "[INFO] -------------------------------------------------------------"
 composer install
 
 echo "[INFO] -------------------------------------------------------------"
-echo "[INFO] Installing SASS (via RUBY)									  "
-echo "[INFO] -------------------------------------------------------------"
-
-gem install sass
-
-echo "[INFO] -------------------------------------------------------------"
-echo "[INFO] RUNNING GRUNT												  "
+echo "[INFO] RUNNING GRUNT"
 echo "[INFO] -------------------------------------------------------------"
 
 grunt copy

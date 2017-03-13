@@ -24,14 +24,15 @@ module.exports = function(grunt) {
                 dest: 'js/vendor.min.js'
             }
         },
-        sass: {                              // Task
-            dist: {                            // Target
-                options: {                       // Target options
-                    style: 'compressed',
-                    noCache: true
-                },
-                files: {                         // Dictionary of files
-                    'css/cam.css': 'scss/cam.scss'       // 'destination': 'source'
+        sass: {
+            options: {
+                outputStyle: 'compressed',
+                sourceMap: false
+            },
+            dist: {
+                files: {
+                    'css/cam.css': 'scss/cam.scss'
+                    //'css/materialize.css': 'scss/materialize.scss'
                 }
             }
         },
@@ -293,7 +294,7 @@ module.exports = function(grunt) {
 
     // Loads
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-newer');

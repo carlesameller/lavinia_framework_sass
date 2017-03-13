@@ -25,8 +25,6 @@ Materializecss (http://materializecss.com/)
 
 ## Dependencies
 * grunt
-* ruby
-* sass
 
 ##### IE (Polyfills)
 * HTML5SHIV [https://github.com/aFarkas/html5shiv](https://github.com/aFarkas/html5shiv)
@@ -35,7 +33,7 @@ Materializecss (http://materializecss.com/)
   
 
 ## Grunt
-* [grunt-contrib-sass](https://github.com/gruntjs/grunt-contrib-sass)
+* [grunt-sass](https://github.com/sindresorhus/grunt-sass)
 * [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
 * [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
 * [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin)
