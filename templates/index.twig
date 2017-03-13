@@ -1,18 +1,13 @@
-{{ include('global/global_header.twig', {title: 'Index'}) }}
-
-<section class="page_wrapper">
-    <!-- HEADER -->
-    {{ include('modules/header/main_header.twig') }}
-
-    <!-- MAIN CONTENT -->
+{% extends 'global/base_global.twig' %}
+{% block page_title %}Home{% endblock %}
+{% block page_stylesheets %}{% endblock %}
+{% block page_content %}
     <main>
         <div class="wrapper">
             <a href="page02" class="x20">GO TO PAGE 2</a>
         </div>
     </main>
+{% endblock %}
+{% block page_scripts %}
 
-    <!-- FOOTER -->
-    {{ include('modules/footer/main_footer.twig') }}
-</section>
-
-{{ include('global/global_footer.twig') }}
+{% endblock %}
