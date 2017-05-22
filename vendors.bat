@@ -37,6 +37,9 @@ call npm install masonry-layout
 echo "[INFO] Installing MATERIALIZECSS (Dogfalo/materialize)"
 call npm install Dogfalo/materialize
 
+echo "[INFO] Installing STICKY (leafo/sticky-kit)"
+call npm install npm install sticky-kit
+
 echo "[INFO] -------------------------------------------------------------"
 echo "[INFO] MOVE & RENAME files from node_modules/ -> scss/			  "
 echo "[INFO] -------------------------------------------------------------"

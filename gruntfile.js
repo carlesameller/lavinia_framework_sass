@@ -12,6 +12,7 @@ module.exports = function(grunt) {
                     'js/vendor/jquery/jquery.js',
                     //'js/vendor/onscreen/on-screen.umd.js',
                     //'js/vendor/modal/remodal.js',
+                    //'js/vendor/sticky/sticky-kit.js',
                     //'js/vendor/select2/select2.full.js',
                     //'js/vendor/slider/slick.js',
                     //'js/vendor/tooltips/tooltipster.bundle.js',
@@ -284,6 +285,13 @@ module.exports = function(grunt) {
                         expand: true,
                         src: ['node_modules/materialize-css/dist/js/materialize.js'],
                         dest: 'js/vendor/materializecss/',
+                        flatten: true,
+                        filter: 'isFile'
+                    },
+                    {
+                        expand: true,
+                        src: ['node_modules/sticky-kiy/dist/sticky-kit.js'],
+                        dest: 'js/vendor/sticky/',
                         flatten: true,
                         filter: 'isFile'
                     }
