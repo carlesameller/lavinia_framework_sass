@@ -23,12 +23,14 @@ $dgrey2: #666666;
 @include colorset("dgrey2", $dgrey2);
 
 //ALERTS
-$al_succes: #92c254;
-@include colorset("al_succes", $al_succes);
-$al_error: #d12205;
-@include colorset("al_error", $al_error);
-$al_warning: #fbbe05;
-@include colorset("al_warning", $al_warning);
+$al_succes: #5cb85c;
+@include colorset("alert_succes", $al_succes);
+$al_info: #5bc0de;
+@include colorset("alert_info", $al_info);
+$al_error: #d9534f;
+@include colorset("alert_error", $al_error);
+$al_warning: #f0ad4e;
+@include colorset("alert_warning", $al_warning);
 
 //PROJECT COLORS
 

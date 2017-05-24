@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -159,6 +158,17 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         src: ['node_modules/remodal/dist/remodal.css'],
+                        dest: 'scss/vendor/modal/',
+                        flatten: true,
+                        filter: 'isFile',
+
+                        rename: function(dest, src) {
+                            return dest + src.replace('.css','.scss');
+                        }
+                    },
+                    {
+                        expand: true,
+                        src: ['node_modules/remodal/dist/remodal-default-theme.css'],
                         dest: 'scss/vendor/modal/',
                         flatten: true,
                         filter: 'isFile',
