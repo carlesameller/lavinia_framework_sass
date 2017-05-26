@@ -300,7 +300,7 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
-                        src: ['node_modules/sticky-kiy/dist/sticky-kit.js'],
+                        src: ['node_modules/sticky-kit/dist/sticky-kit.js'],
                         dest: 'js/vendor/sticky/',
                         flatten: true,
                         filter: 'isFile'
