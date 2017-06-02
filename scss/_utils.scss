@@ -1,4 +1,3 @@
-@import "bourbon/bourbon";
 @import "config";
 
 /*-- POSITIONS --*/
@@ -34,7 +33,7 @@
 
 /*-- VARIOS --*/
 .unselectable{
-  @include user-select(none);
+  user-select: none;
 }
 .bordered{
   border-style: solid;
@@ -43,16 +42,7 @@
 
 /*-- BASIC BORDER RADIUS --*/
 .rad_50{
-  @include border-top-radius(50%);
-  @include border-bottom-radius(50%);
-  @include border-left-radius(50%);
-  @include border-right-radius(50%);
-}
-.rad_4{
-  @include border-top-radius(4px);
-  @include border-bottom-radius(4px);
-  @include border-left-radius(4px);
-  @include border-right-radius(4px);
+  border-radius: 50%;
 }
 
 /*-- RESPONSIVE IMAGE --*/
@@ -68,13 +58,13 @@
 
 /*-- BASIC TRANSITIONS --*/
 .transitioned{
-  @include transition(all 0.2s ease-in);
+  transition: all 0.2s ease-in;
 }
 .mid_transitioned{
-  @include transition(all 1s ease-in);
+  transition: all 0.5s ease-in;
 }
 .long_transitioned{
-  @include transition(all 2s ease-in);
+  transition: all 1s ease-in;
 }
 
 /*-- SPECIFIC HEIGHTS & WIDTHS --*/
