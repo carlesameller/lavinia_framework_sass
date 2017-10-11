@@ -4,228 +4,162 @@
 
 .gutter{padding-left:  $gutter; padding-right: $gutter;}
 [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"]{
-  &.halfgutter{padding: 0 $gutter/2; min-height: 1px;}
-  &.nogutter  {padding: 0; min-height: 1px;}
-  &.vmid {vertical-align: middle;}
-  &.vbot {vertical-align: bottom;}
-  min-height: 1px;
+  &.halfgutter{padding: 0 $gutter/2;}
+  &.nogutter  {padding: 0;}
   padding-left:  $gutter;
   padding-right: $gutter;
-  display: inline-block;
-  vertical-align: top;
+  flex: 0 1;
 }
 
 .row{
   width: 100%;
-  clear: both;
-  &:after, &:before{
-    clear: both;
+  display:flex;
+  flex-wrap:wrap;
+  &.dir_row{flex-direction:row;}
+  &.dir_col{flex-direction:column;}
+  &.fx_wrap{flex-wrap:wrap;}
+  &.fx_nowrap{flex-wrap:nowrap;}
+  &.jc_start{justify-content:flex-start;}
+  &.jc_end{justify-content:flex-end;}
+  &.jc_center{justify-content:center;}
+  &.jc_between{justify-content:space-between;}
+  &.jc_around{justify-content:space-around;}
+  &.ai_start{align-items:flex-start;}
+  &.ai_end{align-items:flex-end;}
+  &.ai_center{align-items:center;}
+  &.ai_baseline{align-items:baseline;}
+  &.ai_stretch{align-items:stretch;}
+
+  [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"]{
+    @for $i from 1 through $col_number / 2 {
+      &.order#{$i}{order:($i);}
+    }
+    &.self_{
+      &start{align-self:flex-start;}
+      &end{align-self:flex-end;}
+      &center{align-self:center;}
+      &baseline{align-self:baseline;}
+      &stretch{align-self:stretch;}
+    }
   }
+
   &.nogutter{
     padding-left:  $gutter; padding-right: $gutter;
-    [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"] {padding: 0;min-height: 1px;}
+    [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"] {padding: 0;}
   }
   &.halfgutter{
     padding-left:  $gutter/2; padding-right: $gutter /2;
-    [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"] {padding: 0 $gutter/2; min-height: 1px;}
+    [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"] {padding: 0 $gutter/2;}
   }
-  @if $enable_flexbox {
-    /*-- FLEXBOX GRID --*/
-    &.flex{
-      width: 100%;
-      display:flex;
-      flex-wrap:wrap;
-      &.flex_{
-        &direction_row{flex-direction:row;}
-        &direction_column{flex-direction:column;}
-        &wrap{flex-wrap:wrap;}
-        &nowrap{flex-wrap:nowrap;}
-        &justify_start{justify-content:flex-start;}
-        &justify_end{justify-content:flex-end;}
-        &justify_center{justify-content:center;}
-        &justify_between{justify-content:space-between;}
-        &justify_around{justify-content:space-around;}
-        &align_start{align-items:flex-start;}
-        &align_end{align-items:flex-end;}
-        &align_center{align-items:center;}
-        &align_baseline{align-items:baseline;}
-        &align_stretch{align-items:stretch;}
-      }
-
-      [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"]{
-        @for $i from 1 through $col_number / 2 {
-          &.flex_order#{$i}{order:($i);}
-        }
-        &.flex_self_{
-          &start{align-self:flex-start;}
-          &end{align-self:flex-end;}
-          &center{align-self:center;}
-          &baseline{align-self:baseline;}
-          &stretch{align-self:stretch;}
-        }
-
-        display: inherit;
-        > *{
-          width: 100%;
-        }
-      }
+  @media (min-width: $md_from) and (max-width: $md_to) {
+    &.#{$md_prefix}{
+      &dir_row{flex-direction:row;}
+      &dir_col{flex-direction:column;}
+      &fx_wrap{flex-wrap:wrap;}
+      &fx_nowrap{flex-wrap:nowrap;}
+      &jc_start{justify-content:flex-start;}
+      &jc_end{justify-content:flex-end;}
+      &jc_center{justify-content:center;}
+      &jc_between{justify-content:space-between;}
+      &jc_around{justify-content:space-around;}
+      &ai_start{align-items:flex-start;}
+      &ai_end{align-items:flex-end;}
+      &ai_center{align-items:center;}
+      &ai_baseline{align-items:baseline;}
+      &ai_stretch{align-items:stretch;}
     }
-    &.noflex {
-      [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"] {
-        display: inline-block;
+
+    [class^="#{$md_prefix}"], [class*=" #{$md_prefix}"]{
+      @for $i from 1 through $col_number / 2 {
+        &.#{$md_prefix}order#{$i}{order:($i);}
+      }
+      &.#{$md_prefix}self_{
+        &start{align-self:flex-start;}
+        &end{align-self:flex-end;}
+        &center{align-self:center;}
+        &baseline{align-self:baseline;}
+        &stretch{align-self:stretch;}
       }
     }
   }
-}
 
-@media (min-width: $md_from) and (max-width: $md_to) {
-  .row{
-    @if $enable_flexbox {
-      /*-- FLEXBOX GRID --*/
-      &.#{$md_prefix}flex{
-        width: 100%;
-        display:flex;
-        flex-wrap:wrap;
-        &.#{$md_prefix}flex_{
-          &direction_row{flex-direction:row;}
-          &direction_column{flex-direction:column;}
-          &wrap{flex-wrap:wrap;}
-          &nowrap{flex-wrap:nowrap;}
-          &justify_start{justify-content:flex-start;}
-          &justify_end{justify-content:flex-end;}
-          &justify_center{justify-content:center;}
-          &justify_between{justify-content:space-between;}
-          &justify_around{justify-content:space-around;}
-          &align_start{align-items:flex-start;}
-          &align_end{align-items:flex-end;}
-          &align_center{align-items:center;}
-          &align_baseline{align-items:baseline;}
-          &align_stretch{align-items:stretch;}
-        }
-        [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"]{
-          @for $i from 1 through $col_number / 2 {
-            &.#{$md_prefix}flex_order#{$i}{order:($i);}
-          }
-          &.#{$md_prefix}flex_self_{
-            &start{align-self:flex-start;}
-            &end{align-self:flex-end;}
-            &center{align-self:center;}
-            &baseline{align-self:baseline;}
-            &stretch{align-self:stretch;}
-          }
-          display: inherit;
-          > *{
-            width: 100%;
-          }
-        }
+  @media (min-width: $sm_from) and (max-width: $sm_to) {
+    &.#{$sm_prefix}{
+      &dir_row{flex-direction:row;}
+      &dir_col{flex-direction:column;}
+      &fx_wrap{flex-wrap:wrap;}
+      &fx_nowrap{flex-wrap:nowrap;}
+      &jc_start{justify-content:flex-start;}
+      &jc_end{justify-content:flex-end;}
+      &jc_center{justify-content:center;}
+      &jc_between{justify-content:space-between;}
+      &jc_around{justify-content:space-around;}
+      &ai_start{align-items:flex-start;}
+      &ai_end{align-items:flex-end;}
+      &ai_center{align-items:center;}
+      &ai_baseline{align-items:baseline;}
+      &ai_stretch{align-items:stretch;}
+    }
+
+    [class^="#{$sm_prefix}"], [class*=" #{$sm_prefix}"]{
+      @for $i from 1 through $col_number / 2 {
+        &.#{$sm_prefix}order#{$i}{order:($i);}
+      }
+      &.#{$sm_prefix}self_{
+        &start{align-self:flex-start;}
+        &end{align-self:flex-end;}
+        &center{align-self:center;}
+        &baseline{align-self:baseline;}
+        &stretch{align-self:stretch;}
       }
     }
   }
-}
 
-@media (min-width: $sm_from) and (max-width: $sm_to) {
-  .row{
-    @if $enable_flexbox {
-      /*-- FLEXBOX GRID --*/
-      &.#{$sm_prefix}flex{
-        width: 100%;
-        display:flex;
-        flex-wrap:wrap;
-        &.#{$sm_prefix}flex_{
-          &direction_row{flex-direction:row;}
-          &direction_column{flex-direction:column;}
-          &wrap{flex-wrap:wrap;}
-          &nowrap{flex-wrap:nowrap;}
-          &justify_start{justify-content:flex-start;}
-          &justify_end{justify-content:flex-end;}
-          &justify_center{justify-content:center;}
-          &justify_between{justify-content:space-between;}
-          &justify_around{justify-content:space-around;}
-          &align_start{align-items:flex-start;}
-          &align_end{align-items:flex-end;}
-          &align_center{align-items:center;}
-          &align_baseline{align-items:baseline;}
-          &align_stretch{align-items:stretch;}
-        }
-        [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"]{
-          @for $i from 1 through $col_number / 2 {
-            &.#{$sm_prefix}flex_order#{$i}{order:($i);}
-          }
-          &.#{$sm_prefix}flex_self_{
-            &start{align-self:flex-start;}
-            &end{align-self:flex-end;}
-            &center{align-self:center;}
-            &baseline{align-self:baseline;}
-            &stretch{align-self:stretch;}
-          }
-          display: inherit;
-          > *{
-            width: 100%;
-          }
-        }
+  @media (min-width: $xs_from) and (max-width: $xs_to) {
+    &.#{$xs_prefix}{
+      &dir_row{flex-direction:row;}
+      &dir_col{flex-direction:column;}
+      &fx_wrap{flex-wrap:wrap;}
+      &fx_nowrap{flex-wrap:nowrap;}
+      &jc_start{justify-content:flex-start;}
+      &jc_end{justify-content:flex-end;}
+      &jc_center{justify-content:center;}
+      &jc_between{justify-content:space-between;}
+      &jc_around{justify-content:space-around;}
+      &ai_start{align-items:flex-start;}
+      &ai_end{align-items:flex-end;}
+      &ai_center{align-items:center;}
+      &ai_baseline{align-items:baseline;}
+      &ai_stretch{align-items:stretch;}
+    }
+
+    [class^="#{$xs_prefix}"], [class*=" #{$xs_prefix}"]{
+      @for $i from 1 through $col_number / 2 {
+        &.#{$xs_prefix}order#{$i}{order:($i);}
+      }
+      &.#{$xs_prefix}self_{
+        &start{align-self:flex-start;}
+        &end{align-self:flex-end;}
+        &center{align-self:center;}
+        &baseline{align-self:baseline;}
+        &stretch{align-self:stretch;}
       }
     }
   }
 }
-
-@media (min-width: $xs_from) and (max-width: $xs_to) {
-  .row{
-    @if $enable_flexbox {
-      /*-- FLEXBOX GRID --*/
-      &.#{$xs_prefix}flex{
-        width: 100%;
-        display:flex;
-        flex-wrap:wrap;
-        &.#{$xs_prefix}flex_{
-          &direction_row{flex-direction:row;}
-          &direction_column{flex-direction:column;}
-          &wrap{flex-wrap:wrap;}
-          &nowrap{flex-wrap:nowrap;}
-          &justify_start{justify-content:flex-start;}
-          &justify_end{justify-content:flex-end;}
-          &justify_center{justify-content:center;}
-          &justify_between{justify-content:space-between;}
-          &justify_around{justify-content:space-around;}
-          &align_start{align-items:flex-start;}
-          &align_end{align-items:flex-end;}
-          &align_center{align-items:center;}
-          &align_baseline{align-items:baseline;}
-          &align_stretch{align-items:stretch;}
-        }
-        [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"]{
-          @for $i from 1 through $col_number / 2 {
-            &.#{$xs_prefix}flex_order#{$i}{order:($i);}
-          }
-          &.#{$xs_prefix}flex_self_{
-            &start{align-self:flex-start;}
-            &end{align-self:flex-end;}
-            &center{align-self:center;}
-            &baseline{align-self:baseline;}
-            &stretch{align-self:stretch;}
-          }
-          display: inherit;
-          > *{
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
 
 /*-- GRID MAKER --*/
 
 @for $i from 1 through $col_number {
   /*-- GENERIC COLUMN --*/
-  .#{$lg_prefix}#{$i} {width: 100% / $col_number * $i;}
+  .#{$lg_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i;}
   .#{$lg_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
 }
 
 /*-- MD COLUMN --*/
 @media (min-width: $md_from) and (max-width: $md_to) {
   @for $i from 1 through $col_number {
-    .#{$md_prefix}#{$i} {width: 100% / $col_number * $i;}
+    .#{$md_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i;}
   }
   @for $i from 0 through $col_number - 1 {
     .#{$md_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
@@ -234,7 +168,7 @@
 /*-- SM COLUMN --*/
 @media (min-width: $sm_from) and (max-width: $sm_to) {
   @for $i from 1 through $col_number {
-    .#{$sm_prefix}#{$i} {width: 100% / $col_number * $i;}
+    .#{$sm_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i;}
   }
   @for $i from 0 through $col_number - 1 {
     .#{$sm_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
@@ -243,7 +177,7 @@
 /*-- XS COLUMN --*/
 @media (min-width: $xs_from) and (max-width: $xs_to) {
   @for $i from 1 through $col_number {
-    .#{$xs_prefix}#{$i} {width: 100% / $col_number * $i;}
+    .#{$xs_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i;}
   }
   @for $i from 0 through $col_number - 1 {
     .#{$xs_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
