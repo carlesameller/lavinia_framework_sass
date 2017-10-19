@@ -46,5 +46,6 @@ echo "[INFO] RUNNING GRUNT"
 echo "[INFO] -------------------------------------------------------------"
 
 grunt copy
+grunt concat
 grunt uglify
 grunt
