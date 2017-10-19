@@ -2,11 +2,15 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        uglify: {
+        concat: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+                //banner: "'use strict';\n",
+                process: function(src, filepath) {
+                    return '// Source: ' + filepath + '\n' +
+                        src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
+                }
             },
-            build: {
+            dist: {
                 src: [
                     'js/vendor/jquery/jquery.js',
                     //'js/vendor/onscreen/on-screen.umd.js',
@@ -20,6 +24,28 @@ module.exports = function(grunt) {
                     //'js/vendor/scrollbar/jquery.mCustomScrollbar.concat.min.js',
                     //'js/vendor/masonry/masonry.pkgd.js',
                     //'js/vendor/materializecss/materialize.js'
+                ],
+                dest: 'js/vendor.js'
+            }
+        },
+        /*babel: {
+            options: {
+                sourceMap: false,
+                presets: ['env']
+            },
+            dist: {
+                files: {
+                    'js/vendor/onscreen/on-screen.js': 'js/vendor/onscreen/on-screen.umd.js'
+                }
+            }
+        },*/
+        uglify: {
+            options: {
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+            },
+            build: {
+                src: [
+                    'js/vendor.js'
                 ],
                 dest: 'js/vendor.min.js'
             }
@@ -78,6 +104,8 @@ module.exports = function(grunt) {
                     "gruntfile.js"
                 ],
                 tasks: [
+                    "concat",
+                    //"babel",
                     "uglify"
                 ]
             },
@@ -318,6 +346,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-babel');
 
     // Default task(s).
     grunt.registerTask('default', ['watch']);

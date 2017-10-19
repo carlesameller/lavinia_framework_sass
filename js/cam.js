@@ -14,6 +14,14 @@ $(function() {
     });
 });
 
+//ONSCREEN
+/*var os = new OnScreen({
+    tolerance: 0
+});
+os.on('enter', '.x20', function (element) {
+    $(element).addClass('onScreen');
+});*/
+
 //TABS
 //COMMON TABS
 $('.common_tabs_selector li').click(function () {
