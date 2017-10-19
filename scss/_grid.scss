@@ -183,3 +183,18 @@
     .#{$xs_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
   }
 }
+
+@mixin breakpoint($point) {
+  @if $point == md {
+    @media (min-width: $md_from) and (max-width: $md_to) { @content ; }
+  }
+  @else if $point == xs_sm {
+    @media (min-width: $sm_from) and (max-width: $sm_to) { @content ; }
+  }
+  @else if $point == sm {
+    @media (min-width: $sm_from) and (max-width: $sm_to) { @content ; }
+  }
+  @else if $point == xs {
+    @media (min-width: $xs_from) and (max-width: $xs_to) { @content ; }
+  }
+}
