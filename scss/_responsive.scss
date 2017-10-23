@@ -1,37 +1,37 @@
 @import "config";
 /* QUERIES */
 
-@media (min-width: $sm_to) {
+@media (min-width: $md_from) and (max-width: $md_to) {
   /* DISPLAYS */
-  .#{$sm_prefix}show {display: none;}
-  .#{$sm_prefix}none {display: block;}
-  .#{$sm_prefix}none_inblock {display: inline-block;}
-  .#{$xs_prefix}show {display: none;}
-  .#{$xs_prefix}show_inblock {display: none;}
-  .#{$xs_prefix}none {display: block;}
-  .#{$xs_prefix}none_inblock {display: inline-block;}
-  .#{$xs_prefix}#{$sm_prefix}show{display: none !important;}
-  .#{$xs_prefix}#{$sm_prefix}none_inblock {display: inline-block !important;}
-  .#{$xs_prefix}#{$sm_prefix}show_inblock {display: none !important;}
-  .#{$xs_prefix}#{$sm_prefix}show_inline {display: none !important;}
-}
+  .#{$md_prefix}show {display: block;}
+  .#{$md_prefix}none {display: none;}
+  .#{$md_prefix}show_inblock {display: inline-block;}
 
-@media (min-width: $xs_from) and (max-width: $sm_to) {
-  .#{$xs_prefix}#{$sm_prefix}none_inblock {display: none !important;}
-  .#{$xs_prefix}#{$sm_prefix}show_inblock {display: inline-block !important;}
-  .#{$xs_prefix}#{$sm_prefix}show_inline {display: inline !important;}
+  /* ALIGNMENT */
+  .#{$md_prefix}al_center {text-align: center;}
+  .#{$md_prefix}al_left {text-align: left;}
+  .#{$md_prefix}al_right{text-align: right;}
+
+  .#{$md_prefix}vtop{vertical-align: top !important;}
+  .#{$md_prefix}vmid{vertical-align: middle !important;}
+  .#{$md_prefix}vbot{vertical-align: bottom !important;}
+
+  /* ADJUSTS */
+  .#{$md_prefix}mgbot100 {margin-bottom: 100px;}
+  .#{$md_prefix}mgbot50 {margin-bottom: 50px;}
+  .#{$md_prefix}mgbot20 {margin-bottom: 20px;}
+  .#{$md_prefix}mgbot10 {margin-bottom: 10px;}
+
+  /* GUTTER */
+  .#{$md_prefix}gutter{padding: 0 10px !important;}
+  .#{$md_prefix}nogutter{padding: 0 !important;}
 }
 
 @media (min-width: $sm_from) and (max-width: $sm_to) {
   /* DISPLAYS */
   .#{$sm_prefix}show {display: block;}
   .#{$sm_prefix}none {display: none;}
-  .#{$sm_prefix}none_inblock {display: none;}
-  .#{$xs_prefix}show {display: none;}
-  .#{$xs_prefix}show_inblock {display: none;}
-  .#{$xs_prefix}none {display: block;}
-  .#{$xs_prefix}none_inblock {display: inline-block;}
-  .#{$xs_prefix}#{$sm_prefix}show{display: block !important;}
+  .#{$sm_prefix}show_inblock {display: inline-block;}
 
   /* ALIGNMENT */
   .#{$sm_prefix}al_center {text-align: center;}
@@ -42,33 +42,22 @@
   .#{$sm_prefix}vmid{vertical-align: middle !important;}
   .#{$sm_prefix}vbot{vertical-align: bottom !important;}
 
-
   /* ADJUSTS */
-  .#{$sm_prefix}mgbot50 {margin-bottom: 50px;}
   .#{$sm_prefix}mgbot100 {margin-bottom: 100px;}
+  .#{$sm_prefix}mgbot50 {margin-bottom: 50px;}
   .#{$sm_prefix}mgbot20 {margin-bottom: 20px;}
   .#{$sm_prefix}mgbot10 {margin-bottom: 10px;}
 
   /* GUTTER */
-  .#{$sm_prefix}gutter{
-    padding: 0 10px !important;
-  }
-  .#{$sm_prefix}nogutter{
-    padding: 0 !important;
-  }
+  .#{$sm_prefix}gutter{padding: 0 10px !important;}
+  .#{$sm_prefix}nogutter{padding: 0 !important;}
 }
 
 @media (min-width: $xs_from) and (max-width: $xs_to) {
   /* DISPLAYS */
-  .#{$sm_prefix}show {display: block;}
-  .#{$sm_prefix}none {display: none;}
-  .#{$sm_prefix}none_inblock {display: none;}
   .#{$xs_prefix}show {display: block;}
-  .#{$xs_prefix}show_inblock {display: inline-block;}
-  .#{$xs_prefix}show_inline {display: inline;}
   .#{$xs_prefix}none {display: none;}
-  .#{$xs_prefix}none_inblock {display: none;}
-  .#{$xs_prefix}#{$sm_prefix}show{display: inline-block !important;}
+  .#{$xs_prefix}show_inblock {display: inline-block;}
 
   /* ALIGNMENT */
   .#{$xs_prefix}al_center {text-align: center;}
@@ -76,18 +65,12 @@
   .#{$xs_prefix}al_right {text-align: right;}
 
   /* ADJUSTS */
+  .#{$xs_prefix}mgbot100 {margin-bottom: 100px;}
   .#{$xs_prefix}mgbot50 {margin-bottom: 50px;}
-  .#{$xs_prefix}mgbot40 {margin-bottom: 40px;}
   .#{$xs_prefix}mgbot20 {margin-bottom: 20px;}
   .#{$xs_prefix}mgbot10 {margin-bottom: 10px;}
-  .#{$xs_prefix}mgright5 {margin-bottom: 5px;}
-
 
   /* GUTTER */
-  .#{$xs_prefix}gutter{
-    padding: 0 10px !important;
-  }
-  .#{$xs_prefix}nogutter{
-    padding: 0 !important;
-  }
+  .#{$xs_prefix}gutter{padding: 0 10px !important;}
+  .#{$xs_prefix}nogutter{padding: 0 !important;}
 }

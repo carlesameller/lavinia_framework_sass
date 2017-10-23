@@ -14,20 +14,24 @@ $gutter: 10px;
 
 /*-- BREAKPOINTS --*/
 /*PREFIXES*/
-$lg_prefix: col_;
+$col_prefix: col_;
+
+$lg_prefix: lg_;
 $md_prefix: md_;
 $sm_prefix: sm_;
 $xs_prefix: xs_;
 
+//LARGE
+$lg_from: 1281px;
 //MEDIUM
-$md_from: 981px;
 $md_to: 1280px;
+$md_from: 981px;
 //TABLET PORTRAIT
-$sm_from: 768px;
 $sm_to: 980px;
+$sm_from: 768px;
 //MOBILE
-$xs_from: 0px;
 $xs_to: 767px;
+$xs_from: 0px;
 
 /*-- TYPOGRAPHY --*/
 $primary_font_family: Arial, Helvetica, sans-serif;
