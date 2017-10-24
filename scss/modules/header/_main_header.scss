@@ -3,21 +3,21 @@
 
 
 /*-- MD --*/
-@media (min-width: $md_from) and (max-width: $md_to) {
+@include breakpoint(md) {
 
 }
 
 /*-- XS & SM --*/
-@media (min-width: $xs_from) and (max-width: $sm_to) {
+@include breakpoint(xs_sm) {
 
 }
 
 /*-- SM --*/
-@media (min-width: $sm_from) and (max-width: $sm_to) {
+@include breakpoint(sm) {
 
 }
 
 /*-- XS --*/
-@media (min-width: $xs_from) and (max-width: $xs_to) {
+@include breakpoint(xs) {
 
 }
