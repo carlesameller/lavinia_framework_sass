@@ -44,11 +44,11 @@
 
   &.nogutter{
     padding-left:  $gutter; padding-right: $gutter;
-    [class^="#{$col_prefix}#{$lg_prefix}"], [class*=" #{$col_prefix}#{$lg_prefix}"] {padding: 0;}
+    [class^="#{$col_prefix}#{$lg_prefix}"], [class*=" #{$col_prefix}#{$lg_prefix}"], .col {padding: 0;}
   }
   &.halfgutter{
     padding-left:  $gutter/2; padding-right: $gutter /2;
-    [class^="#{$col_prefix}#{$lg_prefix}"], [class*=" #{$col_prefix}#{$lg_prefix}"] {padding: 0 $gutter/2;}
+    [class^="#{$col_prefix}#{$lg_prefix}"], [class*=" #{$col_prefix}#{$lg_prefix}"], .col {padding: 0 $gutter/2;}
   }
   @media (min-width: $md_from) and (max-width: $md_to) {
     &.#{$md_prefix}{

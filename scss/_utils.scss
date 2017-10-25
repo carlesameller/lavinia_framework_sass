@@ -91,9 +91,9 @@
 /*-- POSITION ADJUST (HALL OF SHAME) --*/
 
 /*-- MARGIN --*/
-.mauto{margin-left: auto;margin-right: auto;}
-.mleftauto{margin-left: auto;}
-.mrightauto{margin-right: auto;}
+.mgauto{margin-left: auto;margin-right: auto;}
+.mgleftauto{margin-left: auto;}
+.mgrightauto{margin-right: auto;}
 .mgbot{
   &5 {margin-bottom: 5px;}
   &10{margin-bottom: 10px;}
