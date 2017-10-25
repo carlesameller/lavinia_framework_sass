@@ -1,9 +1,8 @@
 @import "config";
 
 /*-- CUSTOM GRID SYSTEM --*/
-
 .gutter{padding-left:  $gutter; padding-right: $gutter;}
-[class^="#{$col_prefix}"], [class*=" #{$col_prefix}"]{
+[class^="#{$col_prefix}"], [class*=" #{$col_prefix}"], .col{
   &.halfgutter{padding: 0 $gutter/2;}
   &.nogutter  {padding: 0;}
   padding-left:  $gutter;
@@ -185,7 +184,7 @@
 @for $i from 1 through $col_number {
   .#{$col_prefix}#{$lg_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0;}
   .#{$col_prefix}#{$lg_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
-  .col_lg{
+  .col_lg, .col{
     flex-basis: 0;
     -ms-flex-positive: 1;
     flex-grow: 1;
