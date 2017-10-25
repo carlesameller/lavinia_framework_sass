@@ -11,7 +11,7 @@
 }
 
 .row{
-  width: 100%;
+  //width: 100%;
   display:flex;
   flex-wrap:wrap;
   &.dir_row{flex-direction:row;}
@@ -41,13 +41,16 @@
       &stretch{align-self:stretch;}
     }
   }
-
+  &.expand{
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+  }
   &.nogutter{
-    padding-left:  $gutter; padding-right: $gutter;
+    //padding-left:  $gutter; padding-right: $gutter;
     [class^="#{$col_prefix}#{$lg_prefix}"], [class*=" #{$col_prefix}#{$lg_prefix}"], .col {padding: 0;}
   }
   &.halfgutter{
-    padding-left:  $gutter/2; padding-right: $gutter /2;
+    //padding-left:  $gutter/2; padding-right: $gutter /2;
     [class^="#{$col_prefix}#{$lg_prefix}"], [class*=" #{$col_prefix}#{$lg_prefix}"], .col {padding: 0 $gutter/2;}
   }
   @media (min-width: $md_from) and (max-width: $md_to) {
