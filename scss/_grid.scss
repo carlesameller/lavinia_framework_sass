@@ -29,7 +29,7 @@
   &.ai_baseline{align-items:baseline;}
   &.ai_stretch{align-items:stretch;}
 
-  [class^="#{$lg_prefix}"], [class*=" #{$lg_prefix}"]{
+  [class^="#{$col_prefix}#{$lg_prefix}"], [class*=" #{$col_prefix}#{$lg_prefix}"]{
     @for $i from 1 through $col_number / 2 {
       &.order#{$i}{order:($i);}
     }
@@ -71,7 +71,7 @@
       &ai_stretch{align-items:stretch;}
     }
 
-    [class^="#{$md_prefix}"], [class*=" #{$md_prefix}"]{
+    [class^="#{$col_prefix}#{$md_prefix}"], [class*=" #{$col_prefix}#{$md_prefix}"]{
       @for $i from 1 through $col_number / 2 {
         &.#{$md_prefix}order#{$i}{order:($i);}
       }
@@ -103,7 +103,7 @@
       &ai_stretch{align-items:stretch;}
     }
 
-    [class^="#{$sm_prefix}"], [class*=" #{$sm_prefix}"]{
+    [class^="#{$col_prefix}#{$sm_prefix}"], [class*=" #{$col_prefix}#{$sm_prefix}"]{
       @for $i from 1 through $col_number / 2 {
         &.#{$sm_prefix}order#{$i}{order:($i);}
       }
@@ -135,7 +135,7 @@
       &ai_stretch{align-items:stretch;}
     }
 
-    [class^="#{$xs_prefix}"], [class*=" #{$xs_prefix}"]{
+    [class^="#{$col_prefix}#{$xs_prefix}"], [class*=" #{$col_prefix}#{$xs_prefix}"]{
       @for $i from 1 through $col_number / 2 {
         &.#{$xs_prefix}order#{$i}{order:($i);}
       }
@@ -154,7 +154,7 @@
 
 @for $i from 1 through $col_number {
   /*-- GENERIC COLUMN --*/
-  .#{$col_prefix}#{$xs_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0;}
+  .#{$col_prefix}#{$xs_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0; -ms-flex: 0 1 auto;}
   .#{$col_prefix}#{$xs_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
   .col_xs{
     flex-basis: 100%;
@@ -163,7 +163,7 @@
   }
 }
 @for $i from 1 through $col_number {
-  .#{$col_prefix}#{$sm_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0;}
+  .#{$col_prefix}#{$sm_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0; -ms-flex: 0 1 auto;}
   .#{$col_prefix}#{$sm_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
   .col_sm{
     flex-basis: 0;
@@ -174,7 +174,7 @@
   }
 }
 @for $i from 1 through $col_number {
-  .#{$col_prefix}#{$md_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0;}
+  .#{$col_prefix}#{$md_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0; -ms-flex: 0 1 auto;}
   .#{$col_prefix}#{$md_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
   .col_md{
     flex-basis: 0;
@@ -185,7 +185,7 @@
   }
 }
 @for $i from 1 through $col_number {
-  .#{$col_prefix}#{$lg_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0;}
+  .#{$col_prefix}#{$lg_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0; -ms-flex: 0 1 auto;}
   .#{$col_prefix}#{$lg_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
   .col_lg, .col{
     flex-basis: 0;
@@ -199,7 +199,7 @@
 /*-- MD COLUMN --*/
 @media (min-width: $md_from) and (max-width: $md_to) {
   @for $i from 1 through $col_number {
-    .#{$col_prefix}#{$md_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0;}
+    .#{$col_prefix}#{$md_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0; -ms-flex: 0 1 auto;}
   }
   @for $i from 0 through $col_number - 1 {
     .#{$col_prefix}#{$md_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
@@ -208,7 +208,7 @@
 /*-- SM COLUMN --*/
 @media (min-width: $sm_from) and (max-width: $sm_to) {
   @for $i from 1 through $col_number {
-    .#{$col_prefix}#{$sm_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0;}
+    .#{$col_prefix}#{$sm_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0; -ms-flex: 0 1 auto;}
   }
   @for $i from 0 through $col_number - 1 {
     .#{$col_prefix}#{$sm_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
@@ -217,7 +217,7 @@
 /*-- XS COLUMN --*/
 @media (min-width: $xs_from) and (max-width: $xs_to) {
   @for $i from 1 through $col_number {
-    .#{$col_prefix}#{$xs_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0;}
+    .#{$col_prefix}#{$xs_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0; -ms-flex: 0 1 auto;}
   }
   @for $i from 0 through $col_number - 1 {
     .#{$col_prefix}#{$xs_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
