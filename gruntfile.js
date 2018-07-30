@@ -1,3 +1,7 @@
+'use strict';
+
+const sass = require('node-sass');
+
 module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
@@ -52,10 +56,9 @@ module.exports = function(grunt) {
         },
         sass: {
             options: {
-                outputStyle: 'compressed',
-                sourceMap: false
+                implementation: sass
             },
-            dist: {
+            compile: {
                 files: {
                     'css/cam.css': 'scss/cam.scss'
                     //'css/materialize.css': 'scss/materialize.scss'
