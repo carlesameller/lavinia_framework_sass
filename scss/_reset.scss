@@ -8,6 +8,11 @@
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+//SLICK SLIDER FLEXBOX FIX
+* {
+  min-width: 0;
+  min-height: 0;
+}
 
 p {
   font-size: $standard_font_size;
