@@ -29,7 +29,7 @@
   &.ai_baseline{align-items:baseline;}
   &.ai_stretch{align-items:stretch;}
 
-  [class^="#{$col_prefix}#{$lg_prefix}"], [class*=" #{$col_prefix}#{$lg_prefix}"]{
+  [class^="#{$col_prefix}#{$xl_prefix}"], [class*=" #{$col_prefix}#{$xl_prefix}"]{
     @for $i from 1 through $col_number / 2 {
       &.order#{$i}{order:($i);}
     }
@@ -47,12 +47,44 @@
   }
   &.nogutter{
     //padding-left:  $gutter; padding-right: $gutter;
-    [class^="#{$col_prefix}#{$lg_prefix}"], [class*=" #{$col_prefix}#{$lg_prefix}"], .col {padding: 0;}
+    [class^="#{$col_prefix}#{$xl_prefix}"], [class*=" #{$col_prefix}#{$xl_prefix}"], .col {padding: 0;}
   }
   &.halfgutter{
     //padding-left:  $gutter/2; padding-right: $gutter /2;
-    [class^="#{$col_prefix}#{$lg_prefix}"], [class*=" #{$col_prefix}#{$lg_prefix}"], .col {padding: 0 $gutter/2;}
+    [class^="#{$col_prefix}#{$xl_prefix}"], [class*=" #{$col_prefix}#{$xl_prefix}"], .col {padding: 0 $gutter/2;}
   }
+  @media (min-width: $lg_from) and (max-width: $lg_to) {
+    &.#{$lg_prefix}{
+      &dir_row{flex-direction:row;}
+      &dir_col{flex-direction:column;}
+      &fx_wrap{flex-wrap:wrap;}
+      &fx_nowrap{flex-wrap:nowrap;}
+      &jc_start{justify-content:flex-start;}
+      &jc_end{justify-content:flex-end;}
+      &jc_center{justify-content:center;}
+      &jc_between{justify-content:space-between;}
+      &jc_around{justify-content:space-around;}
+      &ai_start{align-items:flex-start;}
+      &ai_end{align-items:flex-end;}
+      &ai_center{align-items:center;}
+      &ai_baseline{align-items:baseline;}
+      &ai_stretch{align-items:stretch;}
+    }
+
+    [class^="#{$col_prefix}#{$lg_prefix}"], [class*=" #{$col_prefix}#{$lg_prefix}"]{
+      @for $i from 1 through $col_number / 2 {
+        &.#{$lg_prefix}order#{$i}{order:($i);}
+      }
+      &.#{$lg_prefix}self_{
+        &start{align-self:flex-start;}
+        &end{align-self:flex-end;}
+        &center{align-self:center;}
+        &baseline{align-self:baseline;}
+        &stretch{align-self:stretch;}
+      }
+    }
+  }
+
   @media (min-width: $md_from) and (max-width: $md_to) {
     &.#{$md_prefix}{
       &dir_row{flex-direction:row;}
@@ -187,7 +219,7 @@
 @for $i from 1 through $col_number {
   .#{$col_prefix}#{$lg_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0; -ms-flex: 0 1 auto;}
   .#{$col_prefix}#{$lg_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
-  .col_lg, .col{
+  .col_lg{
     flex-basis: 0;
     -ms-flex-positive: 1;
     flex-grow: 1;
@@ -196,6 +228,27 @@
   }
 }
 
+@for $i from 1 through $col_number {
+  .#{$col_prefix}#{$xl_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0; -ms-flex: 0 1 auto;}
+  .#{$col_prefix}#{$xl_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
+  .col_xl, .col{
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/*-- LG COLUMN --*/
+@media (min-width: $lg_from) and (max-width: $lg_to) {
+  @for $i from 1 through $col_number {
+    .#{$col_prefix}#{$lg_prefix}#{$i} {width: 100% / $col_number * $i;flex-basis: 100% / $col_number * $i; flex-grow: 0; -ms-flex: 0 1 auto;}
+  }
+  @for $i from 0 through $col_number - 1 {
+    .#{$col_prefix}#{$lg_prefix}off#{$i} {margin-left: 100% / $col_number * $i;}
+  }
+}
 /*-- MD COLUMN --*/
 @media (min-width: $md_from) and (max-width: $md_to) {
   @for $i from 1 through $col_number {
@@ -225,11 +278,14 @@
 }
 
 @mixin breakpoint($point) {
-  @if $point == md {
+  @if $point == lg {
+    @media (min-width: $lg_from) and (max-width: $lg_to) { @content ; }
+  }
+  @else if $point == md {
     @media (min-width: $md_from) and (max-width: $md_to) { @content ; }
   }
   @else if $point == xs_sm {
-    @media (min-width: $sm_from) and (max-width: $sm_to) { @content ; }
+    @media (min-width: $xs_from) and (max-width: $sm_to) { @content ; }
   }
   @else if $point == sm {
     @media (min-width: $sm_from) and (max-width: $sm_to) { @content ; }

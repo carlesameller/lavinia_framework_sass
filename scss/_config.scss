@@ -15,22 +15,27 @@ $gutter: 10px;
 /*-- BREAKPOINTS --*/
 /*PREFIXES*/
 $col_prefix: col_;
+$xl_prefix: xl_;
 $lg_prefix: lg_;
 $md_prefix: md_;
 $sm_prefix: sm_;
 $xs_prefix: xs_;
 
+//XTRA LARGE
+$xl_from: 1681px;
 //LARGE
+$lg_to: 1680px;
 $lg_from: 1281px;
-//MEDIUM
+//TABLET LANDSCAPE
 $md_to: 1280px;
-$md_from: 981px;
+$md_from: 1024px;
 //TABLET PORTRAIT
-$sm_to: 980px;
+$sm_to: 1023px;
 $sm_from: 768px;
 //MOBILE
 $xs_to: 767px;
 $xs_from: 0px;
+
 
 /*-- TYPOGRAPHY --*/
 $primary_font_family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";

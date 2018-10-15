@@ -13,7 +13,7 @@ select, input[type=text], input[type=password],input[type=url],input[type=tel],i
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 1000px white inset;
+    //-webkit-box-shadow: 0 0 0 1000px white inset;
     -webkit-transition-delay: 9999s;
     -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
   }

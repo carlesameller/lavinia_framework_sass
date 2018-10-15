@@ -1,6 +1,39 @@
 @import "config";
 /* QUERIES */
 
+@media (min-width: $xl_from){
+  /* DISPLAYS */
+  .#{$xl_prefix}show {display: block;}
+  .#{$xl_prefix}none {display: none;}
+  .#{$xl_prefix}show_inblock {display: inline-block;}
+}
+
+@media (min-width: $lg_from) and (max-width: $lg_to) {
+  /* DISPLAYS */
+  .#{$lg_prefix}show {display: block;}
+  .#{$lg_prefix}none {display: none;}
+  .#{$lg_prefix}show_inblock {display: inline-block;}
+
+  /* ALIGNMENT */
+  .#{$lg_prefix}al_center {text-align: center;}
+  .#{$lg_prefix}al_left {text-align: left;}
+  .#{$lg_prefix}al_right{text-align: right;}
+
+  .#{$lg_prefix}vtop{vertical-align: top !important;}
+  .#{$lg_prefix}vmid{vertical-align: middle !important;}
+  .#{$lg_prefix}vbot{vertical-align: bottom !important;}
+
+  /* ADJUSTS */
+  .#{$lg_prefix}mgbot100 {margin-bottom: 100px;}
+  .#{$lg_prefix}mgbot50 {margin-bottom: 50px;}
+  .#{$lg_prefix}mgbot20 {margin-bottom: 20px;}
+  .#{$lg_prefix}mgbot10 {margin-bottom: 10px;}
+
+  /* GUTTER */
+  .#{$lg_prefix}gutter{padding: 0 10px !important;}
+  .#{$lg_prefix}nogutter{padding: 0 !important;}
+}
+
 @media (min-width: $md_from) and (max-width: $md_to) {
   /* DISPLAYS */
   .#{$md_prefix}show {display: block;}
